@@ -1,0 +1,1 @@
+'/var/tmp/ru-hexlet-io-courses.html'
