@@ -1,35 +1,33 @@
 name: my_test
 
-on: push
+on:
+  - push
+  - pull_request
+
 jobs:
-  start_linter:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9, 3.10]
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
-      - name: python version check
-        run: python3 -V
+          python-version: ${{ matrix.python-version }}
+        # make depends on poetry
       - name: Install dependencies
         run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          pip install pytest
-          poetry install
-          pip install flake8
-          poetry add pytest
-          pip install pytest-cov
-      - name: Run linter
-        run: |
-          poetry build
+          pip install poetry
           make install
-          make lint
-          make testing
-          pytest --cov
-      - name: climate coverage
+      - name: code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
-         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-         coverageCommand: poetry run pytest --cov=pageloader --cov-report xml
-         debug: true
+          coverageCommand: make testing
+          debug: true      
+      - name: Run linter and pytest
+        run: |
+          make lint
