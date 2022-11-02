@@ -4,10 +4,6 @@ on: push
 jobs:
   start_linter:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        # we want to test our package on several versions of Python
-        python-version: [ 3.8, 3.9, 3.10 ]
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
