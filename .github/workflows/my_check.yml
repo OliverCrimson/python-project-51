@@ -17,6 +17,7 @@ jobs:
           pip install flake8
           poetry add pytest
           pip install pytest-cov
+          python3 -V
       - name: Run linter
         run: |
           poetry build
