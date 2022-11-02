@@ -11,7 +11,7 @@ jobs:
           python-version: 3.10
       - name: Install dependencies
         run: |
-          pip install poetry
+          curl -sSL https://install.python-poetry.org | python3 -
           pip install pytest
           poetry install
           pip install flake8
