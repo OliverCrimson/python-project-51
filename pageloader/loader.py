@@ -19,5 +19,3 @@ def downloading(address, folder=str(pathlib.Path.cwd())):
 
 # file_path = downloading('https://ru.hexlet.io/courses')
 # print(file_path)  # => '/var/tmp/ru-hexlet-io-courses.html'
-
-

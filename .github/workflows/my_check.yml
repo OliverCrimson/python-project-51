@@ -1,0 +1,31 @@
+name: my_test
+
+on: push
+jobs:
+  start_linter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          pip install pytest
+          poetry install
+          pip install flake8
+          poetry add pytest
+          pip install pytest-cov
+      - name: Run linter
+        run: |
+          poetry build
+          make install
+          make lint
+          make testing
+          pytest --cov
+      - name: climate coverage
+        uses: paambaati/codeclimate-action@v3.0.0
+        env:
+         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+         coverageCommand: poetry run pytest --cov=pageloader --cov-report xml
+         debug: true
