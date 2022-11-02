@@ -1,6 +1,6 @@
 
 install:
-	python3 -m pip install dist/*.whl
+	python3 -m pip install --user dist/*.whl
 
 build:
 	poetry build
