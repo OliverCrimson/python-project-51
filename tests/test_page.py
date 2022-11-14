@@ -9,12 +9,12 @@ import pathlib
 # )
 def test_stuff():
     assert pageloader.downloading(
-        'https://ru.hexlet.io/courses',
+        'https://page-loader.hexlet.repl.co',
         '/var/tmp'
-    ) == '/var/tmp/ru-hexlet-io-courses.html'
+    ) == '/var/tmp/page-loader-hexlet-repl-co.html'
 
 
-def test_stufff():
+def test_y():
     assert pageloader.downloading(
-        'https://ru.hexlet.io/courses'
-    ) == f'{pathlib.Path.cwd()}/ru-hexlet-io-courses.html'
+        'https://page-loader.hexlet.repl.co'
+    ) == f'{pathlib.Path.cwd()}/page-loader-hexlet-repl-co.html'

@@ -1,3 +1,3 @@
-from pageloader.loader import downloading
+from pageloader.loader import namin
 
-__all__ = ['downloading']
+__all__ = ['namin']

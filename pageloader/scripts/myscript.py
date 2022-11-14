@@ -1,11 +1,11 @@
 # !/usr/bin/env python3
-from pageloader.loader import downloading
+from pageloader.loader import namin
 from pageloader.cli import parsing
 
 
 def main():
     arguments = parsing()
-    result = downloading(
+    result = namin(
         arguments.url,
         arguments.path,
     )
