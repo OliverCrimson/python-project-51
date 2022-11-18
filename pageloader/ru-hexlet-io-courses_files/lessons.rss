@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Новые уроки на Хекслете</title>
+    <description>Практические уроки по программированию</description>
+    <link>https://ru.hexlet.io/</link>
+    <webMaster>info@hexlet.io</webMaster>
+    <item>
+      <title>Возрастающие и убывающие функции / Функции</title>
+      <guid isPermaLink="false">3084</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/increasing/theory_unit</link>
+      <description>Цель: Изучаем поведение функций при возрастании и убывании</description>
+      <pubDate>Thu, 17 Nov 2022 13:12:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Виды тестирования / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3267</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/types-of-testing/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Название урока / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3266</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/session/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Передача данных по сети. Протокол HTTPS / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3265</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/https/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Уязвимости на странице / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3264</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/vulnerability/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>CRUD / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3263</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/crud/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Формы / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3275</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/forms/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Single Page Application / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3274</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/spa/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Гипертекст / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3273</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/hypertext/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Скорость соединения / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3272</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/connection-speed/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Мультиязычность / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3271</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/multi-language/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>HTML/CSS / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3270</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/html-css/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Кроссбраузерность / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3269</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/cross-browser/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Адаптивность страницы / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3268</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/adaptivity/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Введение в тестирование веб-приложений</title>
+      <guid isPermaLink="false">3262</guid>
+      <link>https://ru.hexlet.io/courses/web-testing-basics/lessons/intro/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Thu, 17 Nov 2022 08:46:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Равенство / Функции</title>
+      <guid isPermaLink="false">3080</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/equality/theory_unit</link>
+      <description>Цель: Изучаем, как использовать равные функции</description>
+      <pubDate>Tue, 15 Nov 2022 12:28:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Онто-функции / Функции</title>
+      <guid isPermaLink="false">3083</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/onto/theory_unit</link>
+      <description>Цель: Выясняем, что такое онто-функции и как работать с ними</description>
+      <pubDate>Tue, 15 Nov 2022 12:26:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>Композиция функций / Функции</title>
+      <guid isPermaLink="false">3085</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/composition/theory_unit</link>
+      <description>Цель: Выясняем, как найти композицию функций и для чего она нужна</description>
+      <pubDate>Tue, 15 Nov 2022 12:25:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Удаление (CRUD) / Python: Разработка на фреймворке Django</title>
+      <guid isPermaLink="false">3312</guid>
+      <link>https://ru.hexlet.io/courses/python-django-basics/lessons/delete/theory_unit</link>
+      <description>Цель: Научиться правильно удалять сущности.</description>
+      <pubDate>Tue, 15 Nov 2022 11:03:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Обновление (CRUD) / Python: Разработка на фреймворке Django</title>
+      <guid isPermaLink="false">3311</guid>
+      <link>https://ru.hexlet.io/courses/python-django-basics/lessons/update/theory_unit</link>
+      <description>Цель: Научиться обновлять сущность.</description>
+      <pubDate>Tue, 15 Nov 2022 11:03:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Создание (CRUD) / Python: Разработка на фреймворке Django</title>
+      <guid isPermaLink="false">3310</guid>
+      <link>https://ru.hexlet.io/courses/python-django-basics/lessons/create/theory_unit</link>
+      <description>Цель: Познакомиться с валидацией и формами.</description>
+      <pubDate>Tue, 15 Nov 2022 11:03:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Работа с формами / Python: Разработка на фреймворке Django</title>
+      <guid isPermaLink="false">3309</guid>
+      <link>https://ru.hexlet.io/courses/python-django-basics/lessons/forms/theory_unit</link>
+      <description>Цель: Познакомиться с генерацией форм.</description>
+      <pubDate>Tue, 15 Nov 2022 11:03:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Django Admin / Python: Разработка на фреймворке Django</title>
+      <guid isPermaLink="false">3313</guid>
+      <link>https://ru.hexlet.io/courses/python-django-basics/lessons/admin/theory_unit</link>
+      <description>Цель: Познакомиться со встроенным механизмом администрирования моделей.</description>
+      <pubDate>Tue, 15 Nov 2022 11:03:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Тестовая комбинаторика / QA-инженер: Продвинутое тестирование</title>
+      <guid isPermaLink="false">3018</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-advanced/lessons/combinatorics/theory_unit</link>
+      <description>Цель: Научиться выбирать методы для эффективного тестирования</description>
+      <pubDate>Mon, 14 Nov 2022 16:18:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Графики / Функции</title>
+      <guid isPermaLink="false">3079</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/graphs/theory_unit</link>
+      <description>Цель: Узнаем, какие бывают графики функций и зачем они нужны</description>
+      <pubDate>Mon, 14 Nov 2022 13:17:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Рекурсия в функциях / Функции</title>
+      <guid isPermaLink="false">3078</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/recursively/theory_unit</link>
+      <description>Цель: Что такое рекурсия и как ее использовать</description>
+      <pubDate>Mon, 14 Nov 2022 13:17:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Множества и функции / Функции</title>
+      <guid isPermaLink="false">3077</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/sets/theory_unit</link>
+      <description>Цель: Находим связи между множествами и функциями</description>
+      <pubDate>Mon, 14 Nov 2022 13:17:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>Функции как правила / Функции</title>
+      <guid isPermaLink="false">3076</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/rules/theory_unit</link>
+      <description>Цель: Изучаем правила функций на примерах</description>
+      <pubDate>Mon, 14 Nov 2022 13:17:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Функции</title>
+      <guid isPermaLink="false">3075</guid>
+      <link>https://ru.hexlet.io/courses/functions/lessons/basics/theory_unit</link>
+      <description>Цель: Знакомимся с темой курса</description>
+      <pubDate>Mon, 14 Nov 2022 13:17:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>SCRUM / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3308</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/scrum/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Поддержка продукта / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3307</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/product-software/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Проектная организация / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3306</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/project-organization/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Time to market / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3305</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/time-to-market/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Этап тестирования / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3304</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/testing-phase/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Жизненный цикл ПО / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3303</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/software-lifecycle/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Жизненный цикл ПО, место тестирования</title>
+      <guid isPermaLink="false">3302</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle/lessons/intro/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Способы смещения тестирования влево по процессу разработки / Этап тестирования</title>
+      <guid isPermaLink="false">3282</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/shift-left/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Пирамида тестирования / Этап тестирования</title>
+      <guid isPermaLink="false">3281</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/testing-pyramid/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Система тестирования / Этап тестирования</title>
+      <guid isPermaLink="false">3280</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/testing-system/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Автоматизация / Этап тестирования</title>
+      <guid isPermaLink="false">3279</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/automation/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Способы удешевления тестирования / Этап тестирования</title>
+      <guid isPermaLink="false">3278</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/costs/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Место тестирования в процессе разработки / Этап тестирования</title>
+      <guid isPermaLink="false">3277</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/part-of-development/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Этап тестирования</title>
+      <guid isPermaLink="false">3276</guid>
+      <link>https://ru.hexlet.io/courses/testing-phase/lessons/intro/theory_unit</link>
+      <description>Цель: Описание урока</description>
+      <pubDate>Fri, 11 Nov 2022 14:28:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Поддержка продукта / Жизненный цикл ПО</title>
+      <guid isPermaLink="false">3143</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle-old/lessons/product-support/theory_unit</link>
+      <description>Цель: Узнать, что происходит после выпуска продукта</description>
+      <pubDate>Fri, 11 Nov 2022 14:02:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Проектная организация / Жизненный цикл ПО</title>
+      <guid isPermaLink="false">3142</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle-old/lessons/project-organization/theory_unit</link>
+      <description>Цель: Понимать, как соотносится реальная организация компании с моделями разработки, какие роли и позиции есть в структуре и как они укладываются в роли внутри жизненного цикла ПО.</description>
+      <pubDate>Fri, 11 Nov 2022 14:02:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Современные методологии: Agile, Scrum, Kanban / Жизненный цикл ПО</title>
+      <guid isPermaLink="false">3192</guid>
+      <link>https://ru.hexlet.io/courses/software-testing-lifecycle-old/lessons/agile/theory_unit</link>
+      <description>Цель: Рассмотреть подробнее Agile. Узнать что такое Scrum и Kanban. Разобраться на примерах, как это работает</description>
+      <pubDate>Fri, 11 Nov 2022 14:02:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Нефункциональное тестирование / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3293</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/non-functional-testing/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Неявные требования / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3292</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/implicit-requirements/theory_unit</link>
+      <description>Цель: Рефлексия по пройденному. Помимо функционального теста есть ещё "здравый смысл"</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Работа с дефектами с продакшна / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3291</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/production-defects/theory_unit</link>
+      <description>Цель: Способы получения информации о дефекте, локализация, воспроизведение</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Регрессионное тестирование / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3290</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/regression-testing/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Рабочий процесс тестировщика/цикл работы с багом / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3289</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/bug-handling-cycle/theory_unit</link>
+      <description>Цель: Работа с требованиями, составление чек-листов и тест-кейсов, "тестовый стенд", процесс тестирования, заведение дефектов, ретест, отчёт о тестировании. Тестирование новых функциональностей</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Баг-репорты / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3300</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/bug-reports/theory_unit</link>
+      <description>Цель: Принципы составления баг-репортов. Инструменты: jira, trello</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Дефект / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3299</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/defect/theory_unit</link>
+      <description>Цель: Что такое. Основные атрибуты (серьёзность/приоритет)</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Инструменты / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3298</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/tools/theory_unit</link>
+      <description>Цель: Рабочие инструменты тестировщика – описания, шаблоны, чек-листы</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Техники тест-дизайна / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3297</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/test-design-techniques/theory_unit</link>
+      <description>Цель: Классы эквивалентности, попарное тестирование, переходы и состояния + про разумность тестирования</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Принципы составления тест-кейса / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3296</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/principles-compiling-test-cases/theory_unit</link>
+      <description>Цель: Атомарность, независимость, однозначность, полнота, не избыточность</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Тест-кейсы, Чек-листы / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3295</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/test-cases-checklists/theory_unit</link>
+      <description>Цель: Что это такое, для чего нужны</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Позитивные и негативные сценарии / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3294</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/positive-negative-scenarios/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Требования к программе / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3301</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/program-requirements/theory_unit</link>
+      <description>Цель: Какие бывают требования, в каком виде, почему нужны тестировщику</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Рабочий процесс тестировщика</title>
+      <guid isPermaLink="false">3286</guid>
+      <link>https://ru.hexlet.io/courses/qa-engineer-workflow/lessons/intro/theory_unit</link>
+      <description>Цель: Курс в разработке</description>
+      <pubDate>Fri, 11 Nov 2022 13:38:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>HTTP Middleware / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3235</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/middleware/theory_unit</link>
+      <description>Цель: Научиться использовать middleware при обработке HTTP запросов в Go</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Валидация HTTP запросов / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3234</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/validation/theory_unit</link>
+      <description>Цель: Познакомиться с валидацией запросов в Go</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>CRUD-операции в Fiber / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3233</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/crud/theory_unit</link>
+      <description>Цель: Научиться реализовывать CRUD-операции в Fiber веб-приложении</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Хранение данных в памяти приложения / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3232</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/local-persistence/theory_unit</link>
+      <description>Цель: Научиться строить слой хранения данных в Golang-приложении</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Сериализация данных в JSON / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3231</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/data-serialization/theory_unit</link>
+      <description>Цель: Познакомиться с различными способами сериализации данных в JSON в Golang</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Роутинг в Go веб-приложении / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3230</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/routing/theory_unit</link>
+      <description>Цель: Научиться описывать роутинг в Golang веб-приложениях</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Веб-приложение на микрофреймворке Fiber / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3229</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/fiber/theory_unit</link>
+      <description>Цель: Научиться читать запросы и отправлять ответы с Fiber</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Логирование в веб-приложении / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3228</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/logging/theory_unit</link>
+      <description>Цель: Научиться использовать логгирование в приложениях</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Веб-разработка на Go / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3227</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/http-standard/theory_unit</link>
+      <description>Цель: Познакомиться на практике со стандартной библиотекой HTTP в Golang. Разобраться с ее плюсами и минусами.</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Введение / Веб-разработка на Go</title>
+      <guid isPermaLink="false">3218</guid>
+      <link>https://ru.hexlet.io/courses/go-web-development/lessons/intro/theory_unit</link>
+      <description>Цель: Узнать о курсе, его структуре, задачах и целях</description>
+      <pubDate>Fri, 11 Nov 2022 13:25:16 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
