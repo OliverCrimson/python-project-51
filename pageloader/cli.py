@@ -1,5 +1,8 @@
 import argparse
+import pathlib
 
+
+CURRENT_DIR = pathlib.Path.cwd()
 
 def parsing():
     parser = argparse.ArgumentParser(
