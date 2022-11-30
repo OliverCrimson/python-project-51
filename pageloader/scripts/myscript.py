@@ -1,15 +1,22 @@
 # !/usr/bin/env python3
-from pageloader.loader import namin
+import logging
+import sys
 from pageloader.cli import parsing
 from pageloader.main_scr import main_func
 
+
 def main():
-    arguments = parsing()
-    result = main_func(
-        arguments.url,
-        arguments.path
-    )
-    return result
+    try:
+        arguments = parsing()
+        result = main_func(
+            arguments.url,
+            arguments.output
+        )
+        return result
+    except Exception as error:
+        logging.error(error)
+        logging.info('Page is not available')
+        sys.exit(1)
 
 
 if __name__ == '__main__':

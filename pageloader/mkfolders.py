@@ -1,4 +1,7 @@
+import logging
 import pathlib
+import sys
+
 from pageloader.naming import change_name
 
 CURRENT_DIR = pathlib.Path.cwd()
@@ -21,3 +24,23 @@ def folder_create(link, path=''):
             f"{path}/{change_name(link)}_files"
         )
         desirable_folder.mkdir(exist_ok=True)
+
+
+
+def mkfolder(link):
+    folder = pathlib.Path(f"{CURRENT_DIR}/{change_name(link)}")
+    folder.mkdir(exist_ok=True)
+
+
+def check_folder(item):
+    path = pathlib.Path(item)
+    if path.exists():
+        logging.info(f'path {path} exists')
+        pass
+    else:
+        logging.info('directory not found')
+        sys.exit(1)
+
+
+# x = pathlib.Path.cwd()
+# print(pathlib.Path(f'{x}/scripts').exists())

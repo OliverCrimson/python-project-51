@@ -1,8 +1,11 @@
-from progress.bar import Bar
+import pathlib
+
+from pageloader.request_module import requesting
 
 
-lst = []
-with Bar('Processing', max=1000) as bar:
-    for i in range(1000):
-        lst.append(i)
-        bar.next()
+def download(link, folder=pathlib.Path.cwd()):
+    content_ = requesting(link)
+    images = content_.find_all('img')
+    scripts = content_.find_all('script')
+    links = content_.find_all('link')
+    script_row, link_row, img_row = [], [], []
