@@ -15,6 +15,7 @@ pathlib = "^1.0.1"
 requests = "^2.28.1"
 requests-mock = "^1.10.0"
 beautifulsoup4 = "^4.11.1"
+progress = "^1.6"
 
 [tool.poetry.scripts]
 page-loader = "page_loader.scripts.myscript:main"

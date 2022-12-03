@@ -27,7 +27,7 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: poetry run pytest --cov=pageloader --cov-report xml
+          coverageCommand: poetry run pytest --cov=page-loader --cov-report xml
           debug: true      
       - name: Run linter and pytest
         run: |
