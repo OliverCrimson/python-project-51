@@ -8,7 +8,8 @@ from bs4 import BeautifulSoup
 
 def requesting(link):
     respond = requests.get(link)
-    if respond.status_code != 200:
+    respond.raise_for_status()
+    if not respond.ok:
         logging.warning(f"respond status code: "
                         f"{respond.status_code}")
         sys.exit(1)

@@ -9,7 +9,7 @@ uninstall:
 	pip uninstall hexlet-code
 
 lint:
-	poetry run flake8 pageloader
+	poetry run flake8 page_loader
 
 poet:
 	poetry install

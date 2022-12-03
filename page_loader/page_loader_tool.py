@@ -3,7 +3,8 @@ import logging
 import pathlib
 from urllib.parse import urljoin, urlparse
 
-from page_loader.content_extractor import downloading_imgs, replacin, img_links_array
+from page_loader.content_extractor \
+    import downloading_imgs, replacin, img_links_array
 from page_loader.mkfolders import form_folder
 from page_loader.naming import change_name
 from page_loader.request_module import requesting

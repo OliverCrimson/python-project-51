@@ -1,7 +1,7 @@
 # import html.parser
 # from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
-
+import logging
 import requests
 from progress.bar import PixelBar
 
@@ -27,12 +27,13 @@ def img_links_array(array, link):
 
 
 def downloading_imgs(link, array, path):
-    with PixelBar('Downloading', max=len(array)) as bar:
-        for item in array:
-            parsed = urlparse(item)
-            with open(f"{path}/{namin(link)[:-5]}-"
-                      f"{replacin(parsed.path)}", 'wb') as file:
-                file.write(requests.get(item).content)
-            bar.next()
-
-
+    if len(array):
+        with PixelBar('Downloading', max=len(array)) as bar:
+            for item in array:
+                parsed = urlparse(item)
+                with open(f"{path}/{namin(link)[:-5]}-"
+                          f"{replacin(parsed.path)}", 'wb') as file:
+                    file.write(requests.get(item).content)
+                bar.next()
+    else:
+        logging.info('Nothing to download')
