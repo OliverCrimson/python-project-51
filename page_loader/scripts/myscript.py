@@ -1,8 +1,9 @@
 # !/usr/bin/env python3
 import logging
 import sys
+
 from page_loader.cli import parsing
-from page_loader.page_loader import download
+from page_loader.page_loader_tool import download
 
 
 def main():

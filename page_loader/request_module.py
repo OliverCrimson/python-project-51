@@ -1,9 +1,9 @@
+# from urllib.parse import urlparse
+import logging
 import sys
 
 import requests
 from bs4 import BeautifulSoup
-# from urllib.parse import urlparse
-import logging
 
 
 def requesting(link):
