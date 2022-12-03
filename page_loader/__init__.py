@@ -1,3 +1,3 @@
-from page_loader.main_scr import main_func
+from page_loader.page_loader import download
 
-__all__ = ['main_func']
+__all__ = ['download']

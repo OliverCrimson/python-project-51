@@ -11,7 +11,7 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
                     level=logging.INFO)
 
 
-def main_func(link, folder=''):# noqa
+def download(link, folder=''):# noqa
     logging.info(f"requested url: {link}")
     x = form_folder(link, folder)
     name = change_name(link)
