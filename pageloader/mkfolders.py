@@ -26,7 +26,6 @@ def folder_create(link, path=''):
         desirable_folder.mkdir(exist_ok=True)
 
 
-
 def mkfolder(link):
     folder = pathlib.Path(f"{CURRENT_DIR}/{change_name(link)}")
     folder.mkdir(exist_ok=True)
@@ -42,5 +41,20 @@ def check_folder(item):
         sys.exit(1)
 
 
-# x = pathlib.Path.cwd()
-# print(pathlib.Path(f'{x}/scripts').exists())
+def form_folder(link, folder=''):
+    if folder:
+        path = pathlib.Path(f"{folder}")
+        if path.exists():
+            return path
+        else:
+            logging.info(f"{folder} not exists")
+            sys.exit(1)
+    if not folder:
+        string = f"{pathlib.Path.cwd()}/{change_name(link)}_files"
+        pathlib.Path(string).mkdir(exist_ok=True)
+        return string
+
+
+def mk_f(path):
+    pth = pathlib.Path(path)
+    pth.mkdir(exist_ok=True)
