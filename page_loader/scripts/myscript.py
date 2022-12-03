@@ -1,8 +1,8 @@
 # !/usr/bin/env python3
 import logging
 import sys
-from pageloader.cli import parsing
-from pageloader.main_scr import main_func
+from page_loader.cli import parsing
+from page_loader.main_scr import main_func
 
 
 def main():

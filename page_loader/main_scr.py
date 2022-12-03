@@ -1,7 +1,7 @@
-from pageloader.images import replacin, img_links_array, downloading_imgs
-from pageloader.mkfolders import form_folder
-from pageloader.naming import change_name
-from pageloader.request_module import requesting
+from page_loader.images import replacin, img_links_array, downloading_imgs
+from page_loader.mkfolders import form_folder
+from page_loader.naming import change_name
+from page_loader.request_module import requesting
 from urllib.parse import urljoin, urlparse
 import pathlib
 import logging

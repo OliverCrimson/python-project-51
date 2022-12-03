@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["MonkeyBusiness <crimson.oliver@gmail.com>"]
 readme = "README.md"
-packages = [{include = "pageloader"}]
+packages = [{include = "page_loader"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -17,7 +17,7 @@ requests-mock = "^1.10.0"
 beautifulsoup4 = "^4.11.1"
 
 [tool.poetry.scripts]
-page-loader = "pageloader.scripts.myscript:main"
+page-loader = "page_loader.scripts.myscript:main"
 
 
 [build-system]

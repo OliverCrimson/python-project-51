@@ -2,7 +2,7 @@ import logging
 import pathlib
 import sys
 
-from pageloader.naming import change_name
+from page_loader.naming import change_name
 
 CURRENT_DIR = pathlib.Path.cwd()
 

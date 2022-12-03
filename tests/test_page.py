@@ -1,9 +1,9 @@
-import pageloader
+import page_loader
 import pytest
 import pathlib
 import requests_mock
-from pageloader.mkfolders import folder_create
-from pageloader.naming import change_name
+from page_loader.mkfolders import folder_create
+from page_loader.naming import change_name
 
 
 def test_change_name():

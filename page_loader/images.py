@@ -4,7 +4,7 @@ import requests
 import pathlib
 from urllib.parse import urljoin, urlparse
 from progress.bar import PixelBar
-from pageloader.loader import namin
+from page_loader.loader import namin
 
 import logging
 
