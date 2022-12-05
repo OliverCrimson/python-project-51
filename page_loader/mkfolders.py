@@ -1,7 +1,7 @@
 import logging
 import pathlib
 import sys
-
+import requests
 from page_loader.naming import change_name
 
 CURRENT_DIR = pathlib.Path.cwd()
@@ -51,7 +51,8 @@ def form_folder(link, folder=''):
             sys.exit(1)
     if not folder:
         string = f"{pathlib.Path.cwd()}/{change_name(link)}_files"
-        pathlib.Path(string).mkdir(exist_ok=True)
+        if requests.get(link).ok:
+            pathlib.Path(string).mkdir(exist_ok=True)
         return string
 
 

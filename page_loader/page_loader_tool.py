@@ -15,12 +15,13 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
 
 def download(link, folder=''):# noqa
     logging.info(f"requested url: {link}")
-    x = form_folder(link, folder)
     name = change_name(link)
+    # val_path = pathlib.Path(f"{x}/{name}_files")
+    response = requesting(link)
+    x = form_folder(link, folder)
     val_path = pathlib.Path(f"{x}/{name}_files")
     val_path.mkdir(exist_ok=True)
     logging.info(f"output path: {pathlib.Path.cwd()}/{folder}")
-    response = requesting(link)
     images = response.find_all('img')
     links = response.find_all('link')
     scripts = response.find_all('script')
