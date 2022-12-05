@@ -54,4 +54,4 @@ def download(link, folder=''):# noqa
     logging.info(f"Page was downloaded as "
                  f"'{folder}/{name}.html'")
 
-download('https://badsite.com')
+# download('https://badsite.com')
