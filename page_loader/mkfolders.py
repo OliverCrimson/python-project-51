@@ -53,7 +53,34 @@ def form_folder(link, folder=''):
         string = f"{pathlib.Path.cwd()}/{change_name(link)}_files"
         if requests.get(link).ok:
             pathlib.Path(string).mkdir(exist_ok=True)
-        return string
+        logging.warning(string)
+        return pathlib.Path(string)
+
+
+def foldres(link, folder=''):
+    if folder:
+        path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
+        print(path)
+        logging.info(f"path {path} exists")
+        if path.exists():
+            fol = pathlib.Path(f"{path}"
+                               f"/{change_name(link)}_files")
+            print(fol)
+            fol.mkdir(exist_ok=True)
+            return fol
+        if not path.exists():
+            logging.info('No such directory')
+            raise FileNotFoundError
+    else:
+        path = pathlib.Path(f"{pathlib.Path.cwd()}"
+                            f"/{change_name(link)}_filessss")
+        print(f"made path {path}")
+        if requests.get(link).ok:
+            path.mkdir(exist_ok=True)
+        return path
+
+
+# foldres('https://page-loader.hexlet.repl.co', 'direct' )
 
 
 def mk_f(path):
