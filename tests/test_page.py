@@ -22,7 +22,7 @@ def test_change_name():
 #     requests_mock.get(bad_url, exc=requests.exceptions.ConnectionError)
 #     with tempfile.TemporaryDirectory() as tmpdirname:
 #         assert not os.listdir(tmpdirname)
-#         
+# 
 #         with pytest.raises(Exception):
 #             assert download(bad_url, tmpdirname)
 #         assert not os.listdir(tmpdirname)

@@ -48,7 +48,7 @@ def form_folder(link, folder=''):
             return path
         else:
             logging.info(f"{folder} not exists")
-            sys.exit(1)
+            raise FileNotFoundError
     if not folder:
         string = f"{pathlib.Path.cwd()}/{change_name(link)}_files"
         if requests.get(link).ok:
