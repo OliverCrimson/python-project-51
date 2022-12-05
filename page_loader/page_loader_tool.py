@@ -47,9 +47,9 @@ def download(link, folder=''):# noqa
     with open(f"{x}/{name}.html", "w") as file:
         file.write(response.prettify())
         logging.info(f'write html file: '
-                     f'{pathlib.Path.cwd()}/{folder}/{name}.html')
+                     f'{pathlib.Path.cwd()}/{folder}{name}.html')
     big_list = lst + lst_links + script_links
     result = img_links_array(big_list, link)
     downloading_imgs(link, result, val_path)
     logging.info(f"Page was downloaded as "
-                 f"'{pathlib.Path.cwd()}/{folder}/{name}.html'")
+                 f"'{pathlib.Path.cwd()}{folder}/{name}.html'")
