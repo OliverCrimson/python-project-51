@@ -18,8 +18,10 @@ def download(link, folder=''):# noqa
     name = change_name(link)
     # val_path = pathlib.Path(f"{x}/{name}_files")
     response = requesting(link)
+    # new_folder = form_folder(link, folder)
     x = form_folder(link, folder)
-    val_path = pathlib.Path(f"{x}/{name}_files")
+    val_path = pathlib.Path(f"{x}")
+    logging.info(f'valid path is {x}')
     val_path.mkdir(exist_ok=True)
     logging.info(f"output path: {pathlib.Path.cwd()}/{folder}")
     images = response.find_all('img')
@@ -44,14 +46,15 @@ def download(link, folder=''):# noqa
                 script_links.append(tag['src'])
                 tag['src'] = f"{val_path}/{replacin(tag['src'])}"
 
-    with open(f"{folder}/{name}.html", "w") as file:
+    with open(f"{pathlib.Path.cwd()}/{name}.html", "w") as file:
         file.write(response.prettify())
+        logging.info(f"modified folder {x}")
         logging.info(f'write html file: '
-                     f'{folder}/{name}123123123.html')
+                     f'{pathlib.Path.cwd()}/{name}.html')
     big_list = lst + lst_links + script_links
     result = img_links_array(big_list, link)
-    downloading_imgs(link, result, val_path)
+    downloading_imgs(link, result, folder)
     logging.info(f"Page was downloaded as "
                  f"'{folder}/{name}.html'")
 
-# download('https://badsite.com')
+# download('https://badsite.com', 'scripts')
