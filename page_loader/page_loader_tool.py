@@ -52,4 +52,4 @@ def download(link, folder=''):# noqa
     result = img_links_array(big_list, link)
     downloading_imgs(link, result, val_path)
     logging.info(f"Page was downloaded as "
-                 f"'{folder}{name}.html'")
+                 f"'{folder}/{name}.html'")
