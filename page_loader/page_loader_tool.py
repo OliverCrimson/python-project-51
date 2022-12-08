@@ -55,3 +55,6 @@ def download(link, folder=''):# noqa
     downloading_imgs(link, result, x)
     logging.info(f"Page was downloaded as "
                  f"'{folder}/{name}.html'")
+
+
+# download('https://page-loader.hexlet.repl.co', 'direc')
