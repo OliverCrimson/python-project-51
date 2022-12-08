@@ -68,7 +68,7 @@ def foldres(link, folder=''):
             return fol
         if not path.exists():
             logging.info('No such directory')
-            raise FileNotFoundError
+            pass
     else:
         cur = pathlib.Path.cwd()
         pth = pathlib.Path(f"{cur}/{change_name(link)}_files")
@@ -76,7 +76,7 @@ def foldres(link, folder=''):
         return pth
 
 
-# foldres('https://page-loader.hexlet.repl.co', 'direc')
+foldres('https://page-loader.hexlet.repl.co', 'direc')
 
 
 def mk_f(path):
