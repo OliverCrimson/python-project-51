@@ -66,9 +66,12 @@ def foldres(link, folder=''):
                                f"/{change_name(link)}_files")
             fol.mkdir(exist_ok=True)
             return fol
+        # if not path.exists():
+        #     logging.info('No such directory')
+        #     sys.exit(1)
         if not path.exists():
-            logging.info('No such directory')
-            sys.exit(1)
+            logging.info(f"Directory {folder} doesn't exist.")
+            raise FileNotFoundError
     else:
         cur = pathlib.Path.cwd()
         pth = pathlib.Path(f"{cur}/{change_name(link)}_files")
