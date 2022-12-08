@@ -57,4 +57,4 @@ def download(link, folder=''):# noqa
                  f"'{folder}/{name}.html'")
 
 
-# download('https://page-loader.hexlet.repl.co', 'direc')
+# download('https://page-loader.hexlet.repl.co', 'diresc')
