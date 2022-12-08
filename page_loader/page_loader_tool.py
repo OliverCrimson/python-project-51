@@ -5,7 +5,7 @@ from urllib.parse import urljoin, urlparse
 
 from page_loader.content_extractor \
     import downloading_imgs, replacin, img_links_array
-from page_loader.mkfolders import foldres
+from page_loader.mkfolders import mk_dir
 from page_loader.naming import change_name
 from page_loader.request_module import requesting
 
@@ -18,7 +18,7 @@ def download(link, folder=''):# noqa
     name = change_name(link)
     logging.info(f"changed link to {name}")
     response = requesting(link)
-    x = foldres(link, folder)
+    x = mk_dir(link, folder)
     val_path = pathlib.Path(f"{x}")
     logging.info(f'valid path is {x}')
     val_path.mkdir(exist_ok=True)
@@ -57,4 +57,4 @@ def download(link, folder=''):# noqa
                  f"'{folder}/{name}.html'")
 
 
-# download('https://page-loader.hexlet.repl.co', 'diresc')
+# download('https://page-loader.hexlet.repl.co')
