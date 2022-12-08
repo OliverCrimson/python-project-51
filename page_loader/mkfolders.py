@@ -85,9 +85,11 @@ def mk_dir(link, folder=''):
         path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
         fol = pathlib.Path(f"{path}/{change_name(link)}_files")
         fol.mkdir(exist_ok=True)
+        logging.info(f"created {fol}")
         return fol
         
     else:
+        logging.info(f"Directory {folder} doesn't exist")
         raise FileNotFoundError
 
 
