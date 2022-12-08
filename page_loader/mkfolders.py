@@ -83,7 +83,7 @@ def mkfolder(link):
 def mk_dir(link, folder=''):
     if pathlib.Path(folder).exists():
         path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
-        fol = pathlib.Path(f"{path}/{change_name(link)}_files")
+        fol = pathlib.Path(f"{path}/{change_name(link.strip())}_files")
         fol.mkdir(exist_ok=True)
         logging.info(f"created {fol}")
         return fol
@@ -94,5 +94,5 @@ def mk_dir(link, folder=''):
 
 
 # print(mk_dir('https://page-loader.hexlet.repl.co', 'scripts'))
-
+# 
 # print(pathlib.Path('direc').exists())
