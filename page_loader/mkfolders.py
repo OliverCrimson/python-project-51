@@ -84,7 +84,7 @@ def mk_dir(link, folder=''):
     if pathlib.Path(folder).exists():
         path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
         fol = pathlib.Path(f"{path}/{change_name(link.strip())}_files")
-        fol.mkdir(exist_ok=True)
+        fol.mkdir(parents=True, exist_ok=True)
         logging.info(f"created {fol}")
         return fol
         
