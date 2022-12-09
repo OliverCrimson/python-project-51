@@ -28,7 +28,7 @@ def folder_create(link, path=''):
 
 def mkfolder(link):
     folder = pathlib.Path(f"{CURRENT_DIR}/{change_name(link)}")
-    folder.mkdir(exist_ok=True)
+    folder.mkdir(parents=True, exist_ok=True)
 
 
 # def check_folder(item):
