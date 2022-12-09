@@ -1,10 +1,10 @@
 from urllib.parse import urlparse
 
-import pathlib
-
-from page_loader.loader import namin
-
-from page_loader.content_extractor import replacin
+# import pathlib
+#
+# from page_loader.loader import namin
+#
+# from page_loader.content_extractor import replacin
 
 
 def change_name(link):

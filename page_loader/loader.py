@@ -1,7 +1,7 @@
 
 import pathlib
 
-import requests
+# import requests
 
 
 def namin(address, folder=str(pathlib.Path.cwd())):
@@ -20,7 +20,6 @@ def namin(address, folder=str(pathlib.Path.cwd())):
     #     result = f"{folder}/{string}.html"
     # return result
     return string + ".html"
-
 
 
 # print(downloading('https://page-loader.hexlet.repl.co'))
