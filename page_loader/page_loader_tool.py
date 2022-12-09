@@ -21,7 +21,7 @@ def download(link, folder=''):# noqa
     x = mk_dir(link, folder)
     val_path = pathlib.Path(f"{x}")
     logging.info(f'valid path is {x}')
-    val_path.mkdir(exist_ok=True)
+    # val_path.mkdir(exist_ok=True)
     logging.info(f"output path: {pathlib.Path.cwd()}/{folder}")
     images = response.find_all('img')
     links = response.find_all('link')
