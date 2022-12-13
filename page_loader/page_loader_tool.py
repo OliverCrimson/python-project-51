@@ -12,6 +12,8 @@ from page_loader.request_module import requesting
 logging.basicConfig(format='%(levelname)s: %(message)s',
                     level=logging.INFO)
 
+CURRENT_DIR = pathlib.Path.cwd()
+
 
 def download(link, folder=''):# noqa
     logging.info(f"requested url: {link}")
@@ -57,4 +59,4 @@ def download(link, folder=''):# noqa
                  f"'{folder}/{name}.html'")
 
 
-# download('https://page-loader.hexlet.repl.co', 'direc')
+# download('https://page-loader.hexlet.repl.co')

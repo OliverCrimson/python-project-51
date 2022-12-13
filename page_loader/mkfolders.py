@@ -56,10 +56,10 @@ CURRENT_DIR = pathlib.Path.cwd()
 
 # foldres('https://page-loader.hexlet.repl.co')
 
-def mk_dir(link, folder=''):
+def mk_dir(link, folder):
     if pathlib.Path(folder).exists():
         path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
-        fol = pathlib.Path(f"{path}/{change_name(link.strip())}_files")
+        fol = pathlib.Path(f"{path}/{change_name(link)}_files")
         fol.mkdir(parents=True, exist_ok=True)
         logging.info(f"created {fol}")
         return fol
