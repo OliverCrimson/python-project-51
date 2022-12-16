@@ -18,13 +18,11 @@ CURRENT_DIR = pathlib.Path.cwd()
 def download(link, folder=''):# noqa
     logging.info(f"requested url: {link}")
     name = change_name(link)
-    logging.info(f"changed link to {name}")
     response = requesting(link)
     x = mk_dir(link, folder)
     val_path = pathlib.Path(f"{x}")
     logging.info(f'valid path is {x}')
     # val_path.mkdir(exist_ok=True)
-    logging.info(f"output path: {pathlib.Path.cwd()}/{folder}")
     images = response.find_all('img')
     links = response.find_all('link')
     scripts = response.find_all('script')
@@ -46,10 +44,11 @@ def download(link, folder=''):# noqa
             if urlparse(valid_link).netloc == urlparse(link).netloc:
                 script_links.append(tag['src'])
                 tag['src'] = f"{val_path}/{replacin(tag['src'])}"
+    logging.info(f"modified folder {x}")
+    logging.info(f'path for html {folder}/{name}.html')
 
-    with open(f"{pathlib.Path.cwd()}/{folder}/{name}.html", "w") as file:
+    with open(f"{road(folder)}/{name}.html", "w") as file:
         file.write(response.prettify())
-        logging.info(f"modified folder {x}")
         logging.info(f'write html file: '
                      f'{pathlib.Path.cwd()}/{name}.html')
     big_list = lst + lst_links + script_links
@@ -57,6 +56,13 @@ def download(link, folder=''):# noqa
     downloading_imgs(link, result, x)
     logging.info(f"Page was downloaded as "
                  f"'{folder}/{name}.html'")
+
+
+def road(folder):
+    if folder is None:
+        return pathlib.Path.cwd()
+    else:
+        return pathlib.Path(folder)
 
 
 # download('https://page-loader.hexlet.repl.co')
