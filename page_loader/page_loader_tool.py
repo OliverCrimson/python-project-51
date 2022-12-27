@@ -15,7 +15,7 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
 CURRENT_DIR = pathlib.Path.cwd()
 
 
-def download(link, folder=''):# noqa
+def download(link, folder='.'):# noqa
     logging.info(f"requested url: {link}")
     name = change_name(link)
     response = requesting(link)
@@ -27,7 +27,7 @@ def download(link, folder=''):# noqa
     links = response.find_all('link')
     scripts = response.find_all('script')
     lst, lst_links, script_links = [], [], []
-
+    print(f"{folder}/{name}.html")
     for tag in images:
         valid_link = urljoin(link, tag['src'])
         if urlparse(valid_link).netloc == urlparse(link).netloc:
@@ -46,8 +46,7 @@ def download(link, folder=''):# noqa
                 tag['src'] = f"{val_path}/{replacin(tag['src'])}"
     logging.info(f"modified folder {x}")
     logging.info(f'path for html {folder}/{name}.html')
-
-    with open(f"{road(folder)}/{name}.html", "w") as file:
+    with open(f"{folder}/{name}.html", "w") as file:
         file.write(response.prettify())
         logging.info(f'write html file: '
                      f'{pathlib.Path.cwd()}/{name}.html')
@@ -57,12 +56,6 @@ def download(link, folder=''):# noqa
     logging.info(f"Page was downloaded as "
                  f"'{folder}/{name}.html'")
 
-
-def road(folder):
-    if folder is None:
-        return pathlib.Path.cwd()
-    else:
-        return pathlib.Path(folder)
 
 
 # download('https://page-loader.hexlet.repl.co')

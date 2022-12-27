@@ -3,7 +3,7 @@ import pathlib
 # import sys
 # import requests
 from page_loader.naming import change_name
-
+import os
 CURRENT_DIR = pathlib.Path.cwd()
 
 
@@ -56,25 +56,22 @@ CURRENT_DIR = pathlib.Path.cwd()
 
 # foldres('https://page-loader.hexlet.repl.co')
 
-def mk_dir(link, folder=''):
+def mk_dir(link, folder='.'):
     if pathlib.Path(folder).exists():
         # path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
         path = pathlib.Path(folder)
         fol = pathlib.Path(f"{path}/{change_name(link)}_files")
         fol.mkdir(parents=True, exist_ok=True)
-        # print(fol)
+
         # print(path)
         logging.info(f"created {fol}")
-        if folder is None:
-            return './'
-        else:
-            return fol
+        return fol
 
     else:
         logging.info(f"Directory {folder} doesn't exist")
         raise FileNotFoundError
 
 
+
 # mk_dir('https://page-loader.hexlet.repl.co')
 
-# print(pathlib.Path('direc').exists())
