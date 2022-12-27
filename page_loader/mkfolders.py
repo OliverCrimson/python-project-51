@@ -56,7 +56,7 @@ CURRENT_DIR = pathlib.Path.cwd()
 
 # foldres('https://page-loader.hexlet.repl.co')
 
-def mk_dir(link, folder='.'):
+def mk_dir(link, folder=''):
     if pathlib.Path(folder).exists():
         # path = pathlib.Path(f"{pathlib.Path.cwd()}/{folder}")
         path = pathlib.Path(folder)
