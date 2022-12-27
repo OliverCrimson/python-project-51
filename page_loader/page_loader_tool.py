@@ -15,7 +15,7 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
 CURRENT_DIR = pathlib.Path.cwd()
 
 
-def download(link, folder='.'):# noqa
+def download(link, folder=''):# noqa
     logging.info(f"requested url: {link}")
     name = change_name(link)
     response = requesting(link)
@@ -27,7 +27,6 @@ def download(link, folder='.'):# noqa
     links = response.find_all('link')
     scripts = response.find_all('script')
     lst, lst_links, script_links = [], [], []
-    print(f"{folder}/{name}.html")
     for tag in images:
         valid_link = urljoin(link, tag['src'])
         if urlparse(valid_link).netloc == urlparse(link).netloc:
