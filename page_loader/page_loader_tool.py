@@ -15,7 +15,7 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
 CURRENT_DIR = pathlib.Path.cwd()
 
 
-def download(link, folder=''):# noqa
+def download(link, folder='.'):# noqa
     logging.info(f"requested url: {link}")
     name = change_name(link)
     response = requesting(link)
@@ -59,8 +59,6 @@ def download(link, folder=''):# noqa
 
 
 # download('https://page-loader.hexlet.repl.co')
-# x = 'https://site.com/photos/me.jpg'
-# print(change_name('https://site.com/photos/me.jpg'))
-# "site-com-blog-about_files/site-com-photos-me.jpg"
-# print(f"{change_name(urlparse(x).netloc)}-{replacin(x)}")
-# https://site.com/photos/me.jpg
+# # x = 'https://site.com/photos/me.jpg'
+# # page-loader-hexlet-repl-co_files/page-loader-hexlet-repl-co-assets-application.css
+# # '/tmp/tmpgzde_sk0/site-com-blog-about_files/site-com-blog-about-assets-styles.css'

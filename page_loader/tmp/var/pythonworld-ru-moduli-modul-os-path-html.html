@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <link href="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-m-css-st.css" rel="stylesheet"/>
+  <title>
+   Модуль os.path | Python 3 для начинающих и чайников
+  </title>
+  <meta content="Модуль os.path реализует некоторые полезные функции на работы с путями." name="description"/>
+  <meta content="os.path" name="keywords"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="always" name="referrer"/>
+ </head>
+ <body>
+  <script src="https://mc.yandex.ru/metrika/watch.js">
+  </script>
+  <script>
+   try{var yaCounter16916062=new Ya.Metrika({id:16916062,webvisor:!0,clickmap:!0,trackLinks:!0,accurateTrackBounce:!0});}catch(e){}
+  </script>
+  <noscript>
+   <div>
+    <img src="https://mc.yandex.ru/watch/16916062" style="position:absolute;left:-9999px"/>
+   </div>
+  </noscript>
+  <div id="page">
+   <header class="site-header clearfix">
+    <div class="site-brand clearfix">
+     <div class="site-logo">
+      <img alt="Python 3 логотип" src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-m-img-python-3.png"/>
+     </div>
+     <div class="header_hgroup">
+      <span id="site-title">
+       <a href="/">
+        Python 3 для начинающих
+       </a>
+      </span>
+     </div>
+    </div>
+    <nav class="main-navigation" id="site-navigation">
+     <button class="menu-toggle">
+      <span class="icon-font icon-menu">
+       ☰
+      </span>
+     </button>
+     <div class="menu-navigation-container">
+      <ul class="menu nav-menu" id="menu-navigation">
+       <li class="menu-item">
+        <a href="/bookshop">
+         Книги
+        </a>
+       </li>
+       <li class="menu-item">
+        <a href="/samouchitel-python">
+         Самоучитель
+        </a>
+       </li>
+       <li>
+        <a href="/kursy">
+         Курсы
+        </a>
+       </li>
+       <li class="menu-item menu-item-has-children">
+        <a>
+         Категории
+        </a>
+        <ul class="sub-menu">
+         <li>
+          <a href="/gui">
+           GUI
+          </a>
+         </li>
+         <li>
+          <a href="/osnovy">
+           Основы
+          </a>
+         </li>
+         <li>
+          <a href="/primery-programm">
+           Примеры
+          </a>
+         </li>
+         <li>
+          <a href="/tipy-dannyx-v-python">
+           Типы данных
+          </a>
+         </li>
+         <li>
+          <a href="/moduli">
+           Модули
+          </a>
+         </li>
+         <li>
+          <a href="/numpy">
+           NumPy
+          </a>
+         </li>
+         <li>
+          <a href="/obrabotka-dannyx">
+           Обработка данных
+          </a>
+         </li>
+         <li>
+          <a href="/web">
+           Web-программирование
+          </a>
+         </li>
+         <li>
+          <a href="/video">
+           Видео
+          </a>
+         </li>
+         <li>
+          <a href="/novosti-mira-python">
+           Новости
+          </a>
+         </li>
+         <li>
+          <a href="/vacancies">
+           Работа
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="menu-item">
+        <a href="/karta-sajta">
+         Все статьи
+        </a>
+       </li>
+      </ul>
+     </div>
+    </nav>
+   </header>
+   <div class="site-main clearfix" id="main">
+    <div class="content-area" id="primary">
+     <div class="site-content hentry" id="content">
+      <article class="post">
+       <header class="entry-header">
+        <h1>
+         Модуль os.path
+        </h1>
+       </header>
+       <div id="ytb">
+        <div id="letpy__banner">
+         <div class="letpy__banner_pic">
+          <a href="https://letpy.com/?utm_source=pythonworldru&amp;utm_content=third" target="_blank">
+           <img src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-uploads-letpy-banner-letpy_banner_3.png"/>
+          </a>
+         </div>
+         <div class="letpy__banner_text">
+          <div class="letpy__banner_text__header">
+           <a href="https://letpy.com/?utm_source=pythonworldru&amp;utm_content=third" target="_blank">
+            Онлайн-тренажер Python 3 для начинающих
+           </a>
+          </div>
+          <div style="padding: 0 10px;margin-bottom: 20px">
+           <a href="https://letpy.com/?utm_source=pythonworldru&amp;utm_content=third" target="_blank">
+            Теория без воды. Задачи с автоматической проверкой. Подсказки на русском языке. Работает в любом современном браузере.
+           </a>
+          </div>
+          <div style="line-height: 40px;">
+           <a class="letpy__button" href="https://letpy.com/?utm_source=pythonworldru&amp;utm_content=third" target="_blank">
+            НАЧАТЬ БЕСПЛАТНО
+           </a>
+           <a class="letpy__button_transparent" href="https://letpy.com/?utm_source=pythonworldru&amp;utm_content=third" target="_blank">
+            <img src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-uploads-letpy-banner-logo-letpy.png"/>
+            LETPY.COM
+           </a>
+          </div>
+          <img src="https://letpy.com/__register-content-view/pythonworld.ru/"/>
+         </div>
+        </div>
+       </div>
+       <div class="entry-content">
+        <p>
+         <b>
+          os.path
+         </b>
+         является вложенным модулем в
+         <a href="https://pythonworld.ru/moduli/modul-os.html" target="_blank">
+          модуль os
+         </a>
+         , и реализует некоторые полезные функции для работы с путями.
+        </p>
+        <p>
+         <b>
+          os.path.abspath
+         </b>
+         (path) - возвращает нормализованный абсолютный путь.
+        </p>
+        <p>
+         <b>
+          os.path.basename
+         </b>
+         (path) - базовое имя пути (эквивалентно os.path.split(path)[1]).
+        </p>
+        <p>
+         <b>
+          os.path.commonprefix
+         </b>
+         (list) - возвращает самый длинный префикс всех путей в списке.
+        </p>
+        <p>
+         <b>
+          os.path.dirname
+         </b>
+         (path) - возвращает имя директории пути path.
+        </p>
+        <p>
+         <b>
+          os.path.exists
+         </b>
+         (path) - возвращает True, если path указывает на существующий путь или дескриптор открытого файла.
+        </p>
+        <p>
+         <b>
+          os.path.expanduser
+         </b>
+         (path) - заменяет ~ или ~user на домашнюю директорию пользователя.
+        </p>
+        <p>
+         <b>
+          os.path.expandvars
+         </b>
+         (path) - возвращает аргумент с подставленными переменными окружения ($name или ${name} заменяются переменной окружения name). Несуществующие имена не заменяет. На Windows также заменяет %name%.
+        </p>
+        <p>
+         <b>
+          os.path.getatime
+         </b>
+         (path) - время последнего доступа к файлу, в секундах.
+        </p>
+        <p>
+         <b>
+          os.path.getmtime
+         </b>
+         (path) - время последнего изменения файла, в секундах.
+        </p>
+        <p>
+         <b>
+          os.path.getctime
+         </b>
+         (path) - время создания файла (Windows), время последнего изменения файла (Unix).
+        </p>
+        <p>
+         <b>
+          os.path.getsize
+         </b>
+         (path) - размер файла в байтах.
+        </p>
+        <p>
+         <b>
+          os.path.isabs
+         </b>
+         (path) - является ли путь абсолютным.
+        </p>
+        <p>
+         <b>
+          os.path.isfile
+         </b>
+         (path) - является ли путь файлом.
+        </p>
+        <p>
+         <b>
+          os.path.isdir
+         </b>
+         (path) - является ли путь директорией.
+        </p>
+        <p>
+         <b>
+          os.path.islink
+         </b>
+         (path) - является ли путь символической ссылкой.
+        </p>
+        <p>
+         <b>
+          os.path.ismount
+         </b>
+         (path) - является ли путь точкой монтирования.
+        </p>
+        <p>
+         <b>
+          os.path.join
+         </b>
+         (path1[, path2[, ...]]) - соединяет пути с учётом особенностей операционной системы.
+        </p>
+        <p>
+         <b>
+          os.path.normcase
+         </b>
+         (path) - нормализует регистр пути (на файловых системах, не учитывающих регистр, приводит путь к нижнему регистру).
+        </p>
+        <p>
+         <b>
+          os.path.normpath
+         </b>
+         (path) - нормализует путь, убирая избыточные разделители и ссылки на предыдущие директории. На Windows преобразует прямые слеши в обратные.
+        </p>
+        <p>
+         <b>
+          os.path.realpath
+         </b>
+         (path) - возвращает канонический путь, убирая все символические ссылки (если они поддерживаются).
+        </p>
+        <p>
+         <b>
+          os.path.relpath
+         </b>
+         (path, start=None) - вычисляет путь относительно директории start (по умолчанию - относительно текущей директории).
+        </p>
+        <p>
+         <b>
+          os.path.samefile
+         </b>
+         (path1, path2) - указывают ли path1 и path2 на один и тот же файл или директорию.
+        </p>
+        <p>
+         <b>
+          os.path.sameopenfile
+         </b>
+         (fp1, fp2) - указывают ли дескрипторы fp1 и fp2 на один и тот же открытый файл.
+        </p>
+        <p>
+         <b>
+          os.path.split
+         </b>
+         (path) - разбивает путь на кортеж (голова, хвост), где хвост - последний компонент пути, а голова - всё остальное. Хвост никогда не начинается со слеша (если путь заканчивается слешем, то хвост пустой). Если слешей в пути нет, то пустой будет голова.
+        </p>
+        <p>
+         <b>
+          os.path.splitdrive
+         </b>
+         (path) - разбивает путь на пару (привод, хвост).
+        </p>
+        <p>
+         <b>
+          os.path.splitext
+         </b>
+         (path) - разбивает путь на пару (root, ext), где ext начинается с точки и содержит не более одной точки.
+        </p>
+        <p>
+         <b>
+          os.path.supports_unicode_filenames
+         </b>
+         - поддерживает ли файловая система Unicode.
+        </p>
+       </div>
+       <nav class="site-navigation post-navigation" id="nav-below">
+       </nav>
+      </article>
+      <div id="share">
+      </div>
+      <div id="yandex_rtb_R-A-139987-8">
+      </div>
+      <script type="text/javascript">
+       (function(w, d, n, s, t) {
+            w[n] = w[n] || [];
+            w[n].push(function() {
+                Ya.Context.AdvManager.render({
+                    blockId: "R-A-139987-8",
+                    renderTo: "yandex_rtb_R-A-139987-8",
+                    async: true
+                });
+            });
+            t = d.getElementsByTagName("script")[0];
+            s = d.createElement("script");
+            s.type = "text/javascript";
+            s.src = "//an.yandex.ru/system/context.js";
+            s.async = true;
+            t.parentNode.insertBefore(s, t);
+        })(this, this.document, "yandexContextAsyncCallbacks");
+      </script>
+      <div class="note" style="margin-bottom: 0">
+       <small>
+        Для вставки кода на Python в комментарий заключайте его в теги
+        <i>
+         &lt;pre&gt;&lt;code class="python3"&gt;Ваш код&lt;/code&gt;&lt;/pre&gt;
+        </i>
+       </small>
+      </div>
+      <div id="disqus_thread">
+      </div>
+      <script>
+       var disqus_shortname="pythonworld",disqus_url="https://pythonworld.ru/moduli/modul-os-path.html";!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://go.disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();
+      </script>
+     </div>
+    </div>
+    <div class="widget-area" id="secondary">
+     <aside class="widget widget_search">
+      <form action="/s.html" id="searchform">
+       <input class="field" id="s" name="s" placeholder="Поиск …" type="search" value=""/>
+       <input class="submit" id="searchsubmit" name="submit" type="submit" value="Найти"/>
+      </form>
+     </aside>
+     <aside class="widget">
+      <p class="widget-title">
+       Свежее
+      </p>
+      <ul>
+       <li>
+        <a href="/moduli/modul-csv.html">
+         Модуль csv - чтение и запись CSV файлов
+        </a>
+       </li>
+       <li>
+        <a href="/web/django-project-with-best-practices-1.html">
+         Создаём сайт на Django, используя хорошие практики. Часть 1: создаём проект
+        </a>
+       </li>
+       <li>
+        <a href="/kursy/online-learning.html">
+         Онлайн-обучение Python: сравнение популярных программ
+        </a>
+       </li>
+      </ul>
+     </aside>
+     <aside class="widget">
+      <p class="widget-title">
+       Категории
+      </p>
+      <ul>
+       <li>
+        <a href="/bookshop">
+         Книги о Python
+        </a>
+       </li>
+       <li>
+        <a href="/gui">
+         GUI (графический интерфейс пользователя)
+        </a>
+       </li>
+       <li>
+        <a href="/kursy">
+         Курсы Python
+        </a>
+       </li>
+       <li>
+        <a href="/moduli">
+         Модули
+        </a>
+       </li>
+       <li>
+        <a href="/novosti-mira-python">
+         Новости мира Python
+        </a>
+       </li>
+       <li>
+        <a href="/numpy">
+         NumPy
+        </a>
+       </li>
+       <li>
+        <a href="/obrabotka-dannyx">
+         Обработка данных
+        </a>
+       </li>
+       <li>
+        <a href="/osnovy">
+         Основы программирования
+        </a>
+       </li>
+       <li>
+        <a href="/primery-programm">
+         Примеры программ
+        </a>
+       </li>
+       <li>
+        <a href="/tipy-dannyx-v-python">
+         Типы данных в Python
+        </a>
+       </li>
+       <li>
+        <a href="/video">
+         Видео
+        </a>
+       </li>
+       <li>
+        <a href="/web">
+         Python для Web
+        </a>
+       </li>
+       <li>
+        <a href="/vacancies">
+         Работа для Python-программистов
+        </a>
+       </li>
+      </ul>
+     </aside>
+     <aside class="widget">
+      <p class="widget-title">
+       Полезные материалы
+      </p>
+      <ul>
+       <li>
+        <a href="/contribute">
+         Сделай свой вклад в развитие сайта!
+        </a>
+       </li>
+       <li>
+        <a href="/samouchitel-python">
+         Самоучитель Python
+        </a>
+       </li>
+       <li>
+        <a href="/karta-sajta">
+         Карта сайта
+        </a>
+       </li>
+       <li>
+        <a href="/python-knigi">
+         Отзывы на книги по Python
+        </a>
+       </li>
+       <li>
+        <a href="/adv">
+         Реклама на сайте
+        </a>
+       </li>
+      </ul>
+     </aside>
+     <aside class="widget widget_soc center">
+      <p class="widget-title">
+       Мы в соцсетях
+      </p>
+      <a href="https://vk.com/python_3" rel="me" target="_blank" title="Присоединиться к Python 3 для начинающих ВКонтакте">
+       <div id="vk">
+       </div>
+      </a>
+     </aside>
+     <aside class="widget center">
+      <div id="rss">
+       <div>
+        Подпишись на обновления
+        <a href="https://feeds.feedburner.com/python3_for_beginners" rel="nofollow" target="_blank">
+         по RSS
+        </a>
+        или по почте!
+       </div>
+       <form action="https://subscribe.ru/member/quick" target="_top">
+        <input name="email" placeholder="Ваш e-mail..." type="email"/>
+        <input name="action" type="hidden" value="quick"/>
+        <input name="src" type="hidden" value="list_comp.soft.python3"/>
+        <input name="grp" type="hidden" value="comp.soft.python3"/>
+        <input type="submit" value="Подписаться!"/>
+       </form>
+      </div>
+     </aside>
+    </div>
+   </div>
+   <footer class="site-footer clearfix" id="colophon">
+    <p class="credits">
+     © 2012-2022
+     <a href="/">
+      Python 3 для начинающих
+     </a>
+    </p>
+   </footer>
+  </div>
+  <script src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-m-js-jquery-3.6.0.min.js">
+  </script>
+  <script src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-m-js-nav.js">
+  </script>
+  <div id="mistype-div">
+   <div id="mistype-div-inner">
+    <img src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-m-mistypes-images-mistypes.png"/>
+    <div id="mistype-title">
+     Опечатка в тексте:
+    </div>
+    <div class="mistype-text">
+     <span id="mistype-before">
+     </span>
+     <span id="mistype-mistype">
+     </span>
+     <span id="mistype-after">
+     </span>
+    </div>
+    <div class="mistype-text">
+     Послать сообщение об ошибке автору?
+    </div>
+    <form action="/mistypes/submit" data-error="Что-то пошло не так. Попробуйте ещё раз или сообщите администратору." data-success="Спасибо за найденную неточность!" data-toomuchtext="Выделено слишком много текста." id="mistype-form" method="POST">
+     <label for="id_comment">
+      Комментарий для автора (необязательно, но очень приветствуется, это позволит быстрее исправить ошибку):
+     </label>
+     <input id="id_comment" maxlength="200" name="comment" type="text"/>
+     <input id="id_url" maxlength="300" name="url" type="hidden"/>
+     <input id="id_before" maxlength="50" name="before" type="hidden"/>
+     <input id="id_mistype" maxlength="100" name="mistype" type="hidden"/>
+     <input id="id_after" maxlength="50" name="after" type="hidden"/>
+     <div class="center">
+      <input id="id_submit" type="submit" value="Отправить"/>
+      <input id="id_cancel" type="button" value="Отмена"/>
+     </div>
+    </form>
+   </div>
+  </div>
+  <script src="pythonworld-ru-moduli-modul-os-path-html_files/pythonworld-ru-m-mistypes-mistypes.js">
+  </script>
+ </body>
+</html>
