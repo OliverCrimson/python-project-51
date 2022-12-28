@@ -27,22 +27,23 @@ def download(link, folder=''):# noqa
     links = response.find_all('link')
     scripts = response.find_all('script')
     lst, lst_links, script_links = [], [], []
+    path_for_html = f'{change_name(link)}_files'
     for tag in images:
         valid_link = urljoin(link, tag['src'])
         if urlparse(valid_link).netloc == urlparse(link).netloc:
             lst.append(tag['src'])
-            tag['src'] = f"{val_path}/{replacin(tag['src'])}"
+            tag['src'] = f"{path_for_html}/{replacin(tag['src'])}"
     for tag in links:
         valid_link = urljoin(link, tag['href'])
         if urlparse(valid_link).netloc == urlparse(link).netloc:
             lst_links.append(tag['href'])
-            tag['href'] = f"{val_path}/{replacin(tag['href'])}"
+            tag['href'] = f"{path_for_html}/{replacin(tag['href'])}"
     for tag in scripts:
         if tag.get('src'):
             valid_link = urljoin(link, tag['src'])
             if urlparse(valid_link).netloc == urlparse(link).netloc:
                 script_links.append(tag['src'])
-                tag['src'] = f"{val_path}/{replacin(tag['src'])}"
+                tag['src'] = f"{path_for_html}/{replacin(tag['src'])}"
     html_file_path = f"{folder}/{name}.html"
     with open(html_file_path, "w") as file:
         file.write(response.prettify())
