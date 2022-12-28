@@ -32,18 +32,18 @@ def download(link, folder=''):# noqa
         valid_link = urljoin(link, tag['src'])
         if urlparse(valid_link).netloc == urlparse(link).netloc:
             lst.append(tag['src'])
-            tag['src'] = f"{path_for_html}/{change_name(urlparse(link).path)}{replacin(tag['src'])}"
+            tag['src'] = f"{path_for_html}/{name}-{replacin(tag['src'])}"
     for tag in links:
         valid_link = urljoin(link, tag['href'])
         if urlparse(valid_link).netloc == urlparse(link).netloc:
             lst_links.append(tag['href'])
-            tag['href'] = f"{path_for_html}/{change_name(urlparse(link).path)}{replacin(tag['href'])}"
+            tag['href'] = f"{path_for_html}/{name}-{replacin(tag['href'])}"
     for tag in scripts:
         if tag.get('src'):
             valid_link = urljoin(link, tag['src'])
             if urlparse(valid_link).netloc == urlparse(link).netloc:
                 script_links.append(tag['src'])
-                tag['src'] = f"{path_for_html}/{change_name(urlparse(link).path)}{replacin(tag['src'])}"
+                tag['src'] = f"{path_for_html}/{name}-{replacin(tag['src'])}"
     html_file_path = f"{folder}/{name}.html"
     with open(html_file_path, "w") as file:
         file.write(response.prettify())
@@ -59,3 +59,5 @@ def download(link, folder=''):# noqa
 
 
 # download('https://page-loader.hexlet.repl.co')
+# print(change_name('https://site.com/blog/about/assets/styles.css'))
+# site-com-blog-about-assets-styles.css
