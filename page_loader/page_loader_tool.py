@@ -43,9 +43,8 @@ def download(link, folder=''):# noqa
             if urlparse(valid_link).netloc == urlparse(link).netloc:
                 script_links.append(tag['src'])
                 tag['src'] = f"{val_path}/{replacin(tag['src'])}"
-    logging.info(f"modified folder {x}")
-    logging.info(f'path for html {folder}/{name}.html')
-    with open(f"{folder}/{name}.html", "w") as file:
+    html_file_path = f"{folder}/{name}.html"
+    with open(html_file_path, "w") as file:
         file.write(response.prettify())
         logging.info(f'write html file: '
                      f'{pathlib.Path.cwd()}/{name}.html')
@@ -54,6 +53,7 @@ def download(link, folder=''):# noqa
     downloading_imgs(link, result, x)
     logging.info(f"Page was downloaded as "
                  f"'{folder}/{name}.html'")
+    return html_file_path
 
 
 
