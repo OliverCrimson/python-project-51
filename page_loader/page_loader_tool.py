@@ -5,6 +5,7 @@ from urllib.parse import urljoin, urlparse
 
 from page_loader.content_extractor \
     import downloading_imgs, replacin, img_links_array
+from page_loader.loader import namin
 from page_loader.mkfolders import mk_dir
 from page_loader.naming import change_name
 from page_loader.request_module import requesting
@@ -58,7 +59,4 @@ def download(link, folder='.'):# noqa
 
 
 
-# download('https://page-loader.hexlet.repl.co')
-# # x = 'https://site.com/photos/me.jpg'
-# # page-loader-hexlet-repl-co_files/page-loader-hexlet-repl-co-assets-application.css
-# # '/tmp/tmpgzde_sk0/site-com-blog-about_files/site-com-blog-about-assets-styles.css'
+# download('https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.suffix')

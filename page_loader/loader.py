@@ -1,7 +1,8 @@
-
+import os
 import pathlib
+import re
 
-# import requests
+from urllib.parse import urlparse, urljoin
 
 
 def namin(address, folder=str(pathlib.Path.cwd())):
@@ -22,5 +23,21 @@ def namin(address, folder=str(pathlib.Path.cwd())):
     return string + ".html"
 
 
-# print(downloading('https://page-loader.hexlet.repl.co'))
-# save_file('https://page-loader.hexlet.repl.co')
+
+
+
+def normalize_link(link):
+    link_ = urlparse(link).netloc + urlparse(link).path
+    return link_
+
+
+def normalize_string(link):
+    arr = os.path.split(link)
+    first_part = arr[0].replace('/', '-').replace('.', '-')
+    second_part = arr[1]
+    if '.' not in second_part:
+        result = first_part + second_part + '.html'
+        return result
+    else:
+        return first_part + second_part
+

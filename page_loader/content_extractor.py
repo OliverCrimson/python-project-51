@@ -5,7 +5,8 @@ import logging
 import requests
 from progress.bar import PixelBar
 
-from page_loader.loader import namin
+from page_loader.loader import namin, normalize_string
+
 
 
 def replacin(item):
@@ -26,13 +27,14 @@ def img_links_array(array, link):
     return form_array
 
 
-def downloading_imgs(link, array, path):    
+def downloading_imgs(link, array, path):
+    # path_for_html = f'{change_name(link)}_files/{}'
     if len(array):
         with PixelBar('Downloading', max=len(array)) as bar:
             for item in array:
                 parsed = urlparse(item)
                 with open(f"{path}/{namin(link)[:-5]}-"
-                          f"{replacin(parsed.path)}", 'wb') as file:
+                          f"{normalize_string(parsed.path)}", 'wb') as file:
                     file.write(requests.get(item).content)
                     logging.info(f"item {path}/{namin(link)[:-5]}-"
                                  f"{replacin(parsed.path)}")
