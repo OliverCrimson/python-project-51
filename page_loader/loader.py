@@ -32,7 +32,8 @@ def normalize_link(link):
 
 
 def normalize_string(link):
-    arr = os.path.split(link)
+    norm = normalize_link(link)
+    arr = os.path.split(norm)
     first_part = arr[0].replace('/', '-').replace('.', '-')
     second_part = arr[1]
     if '.' not in second_part:
@@ -41,3 +42,4 @@ def normalize_string(link):
     else:
         return first_part + second_part
 
+# print(normalize_string('https://site.com/blog/about/assets/styles.css'))
