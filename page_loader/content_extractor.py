@@ -33,11 +33,11 @@ def downloading_imgs(link, array, path):
         with PixelBar('Downloading', max=len(array)) as bar:
             for item in array:
                 parsed = urlparse(item)
-                with open(f"{path}/{namin(link)[:-5]}-"
+                with open(f"{path}/{namin(link)[:-5]}"
                           f"{normalize_string(parsed.path)}", 'wb') as file:
                     file.write(requests.get(item).content)
-                    logging.info(f"item {path}/{namin(link)[:-5]}-"
-                                 f"{replacin(parsed.path)}")
+                    logging.info(f"item {path}/{namin(link)[:-5]}"
+                                 f"{normalize_string(parsed.path)}")
                 bar.next()
     else:
         logging.info('Nothing to download')

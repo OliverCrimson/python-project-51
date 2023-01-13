@@ -37,9 +37,13 @@ def normalize_string(link):
     first_part = arr[0].replace('/', '-').replace('.', '-')
     second_part = arr[1]
     if '.' not in second_part:
-        result = first_part + second_part + '.html'
+        result = first_part + '-' + second_part + '.html'
         return result
     else:
-        return first_part + second_part
+        return first_part + '-' + second_part
 
-# print(normalize_string('https://site.com/blog/about/assets/styles.css'))
+# print(normalize_string('assets/application.css'))
+
+
+# print(read('/home/monkeybusiness/new_proj/python-project-51/tests/fixtures/sample.html', 'r'))
+

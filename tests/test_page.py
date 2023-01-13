@@ -2,6 +2,8 @@ import os
 
 import requests.exceptions
 import requests
+
+from page_loader.loader import normalize_string
 from page_loader.page_loader_tool import download
 
 import page_loader
@@ -17,8 +19,12 @@ def test_change_name():
 
 
 
-# def test_connect():
-#     with requests_mock.Mocker() as mock:
-#         mock.get('https://page-loader.hexlet.repl.co', status_code=400)
-#         assert download()
-
+# def read(file, mode="r"):
+#     with open (file, "r") as f:
+#         f = f.read()
+#         return f
+# 
+# def test_string():
+#     expected = 'site-com-blog-about-assets-styles.css'
+#     actual = normalize_string('https://site.com/blog/about/assets/styles.css')
+#     assert expected == actual

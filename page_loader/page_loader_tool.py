@@ -59,4 +59,4 @@ def download(link, folder='.'):# noqa
 
 
 
-# download('https://docs.python.org/3/library/pathlib.html#pathlib.PurePath.suffix')
+# download('https://page-loader.hexlet.repl.co')
