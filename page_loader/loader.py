@@ -1,7 +1,9 @@
 import os
 import pathlib
 import re
-
+import tempfile
+import shutil
+import requests_mock
 from urllib.parse import urlparse, urljoin
 
 
@@ -45,5 +47,4 @@ def normalize_string(link):
 # print(normalize_string('assets/application.css'))
 
 
-# print(read('/home/monkeybusiness/new_proj/python-project-51/tests/fixtures/sample.html', 'r'))
 

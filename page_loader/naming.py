@@ -1,3 +1,4 @@
+import os.path
 from urllib.parse import urlparse
 
 # import pathlib
@@ -8,14 +9,24 @@ from urllib.parse import urlparse
 
 
 def change_name(link):
-    string = f"{urlparse(link).netloc}" \
-             f"{urlparse(link).path}"
-    string = string.replace('.', '-')
-    string = string.replace('/', '-')
-    # if string.endswith('-'):
-    #     string = string[:-1]
-    return string
+    no_scheme = urlparse(link).netloc + urlparse(link).path
+    result = no_scheme.replace('/', '-').replace('.', '-')
+    return result
 
 
-# x = ' https://site.com/blog/about'
-# print(pathlib.Path(f"{pathlib.Path.cwd()}/{change_name(x.strip())}_files"))
+def normalize_links(link):
+    splitted = os.path.splitext(link)
+    first_part = change_name(splitted[0])
+    second_part = splitted[1]
+    if '.' not in second_part:
+        second_part += '.html'
+    result = first_part + second_part
+    return result
+    
+
+def naming_folders(link):
+    result = f'{change_name(link)}_files'
+    return result
+
+# x = 'https://site.com/blog/about'
+# print(naming_folders(x))
