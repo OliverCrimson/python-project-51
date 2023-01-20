@@ -69,5 +69,7 @@ def download(link, folder='.'):
             html_file.write(juice)
     
     return html_path
-test = 'https://page-loader.hexlet.repl.co'
-download(test, '/home/monkeybusiness/Desktop')
+
+
+# test = 'https://page-loader.hexlet.repl.co'
+# download(test, '/home/monkeybusiness/Desktop')
