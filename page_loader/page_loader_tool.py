@@ -3,7 +3,6 @@ import tempfile
 from urllib.parse import urljoin, urlparse
 import pathlib
 import requests
-from bs4 import BeautifulSoup
 from progress.bar import PixelBar
 from page_loader.mkfolders import make_folder
 from page_loader.naming import naming_folders, change_name, flatter_paths
@@ -19,7 +18,7 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
 
 
 
-def finding_tags(soup, link, folder=pathlib.Path.cwd()):
+def finding_tags(soup, link):
     search_data = [
         ('img', 'src'),
         ('link', 'href'),
@@ -68,9 +67,10 @@ def download(link, folder='.'):
             bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
+    print(html_path)
     return html_path
 
-
+# 
 # with tempfile.TemporaryDirectory() as tempdir:
 #     test = 'https://page-loader.hexlet.repl.co'
 #     print(tempdir)
