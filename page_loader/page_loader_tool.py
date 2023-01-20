@@ -1,4 +1,5 @@
 import logging
+import tempfile
 from urllib.parse import urljoin, urlparse
 import pathlib
 import requests
@@ -70,8 +71,9 @@ def download(link, folder='.'):
             html_file.write(juice)
             
     # print(html_path)
-    return html_path
+    return pathlib.Path(html_path)
 
-
-# test = 'https://page-loader.hexlet.repl.co'
-# download(test)
+# with tempfile.TemporaryDirectory() as tempdir:
+#     test = 'https://page-loader.hexlet.repl.co'
+#     print(tempdir)
+#     download(test, tempdir)

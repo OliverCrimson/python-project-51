@@ -5,6 +5,8 @@ import tempfile
 import pytest
 import requests
 import requests_mock
+
+from page_loader.mkfolders import make_folder
 from page_loader.page_loader_tool import download
 
 from page_loader.loader import normalize_string
@@ -31,11 +33,18 @@ def test_string():
     actual = normalize_string('https://site.com/blog/about/assets/styles.css')
     assert expected == actual
 
-# def test_folder_creation():
-#     expected_dir_name = 'site-com-blog-about_files'
-#     # mk_dir('https://site.com/blog/about')
-#     assert pathlib.Path(expected_dir_name).exists()
-#     os.rmdir(expected_dir_name)
+def test_folder_creation():
+    expected_dir_name = 'site-com-blog-about_files'
+    make_folder('https://site.com/blog/about')
+    assert pathlib.Path(expected_dir_name).exists()
+    os.rmdir(expected_dir_name)
+
+def test_download():
+    with tempfile.TemporaryDirectory() as tempdir:
+        expect = f'{tempdir}/page-loader-hexlet-repl-co.html'
+        print(expect)
+        assert expect == download('https://page-loader.hexlet.repl.co', tempdir)
+
 
 
 # def test_download():
@@ -45,8 +54,8 @@ def test_string():
 #     with requests_mock.Mocker() as dummy, tempfile.TemporaryDirectory() as dummy_dir:
 #         dummy.get('https://site.com/blog/about', text=original)
 #         download('https://site.com/blog/about', dummy_dir)
-#                 
-# 
+# #                 
+# # 
 
 
 
