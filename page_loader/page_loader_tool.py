@@ -50,9 +50,8 @@ def netloc_check(link, item):
         return item
 
 
-def download(link, folder='.'):
+def downloading(link, folder='.'):
     folder_name = change_name(link)
-    
     soup = requesting(link)
     path_to_folder = make_folder(folder_name, folder)
     logging.info(f'created a folder {path_to_folder}')
