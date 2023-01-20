@@ -63,7 +63,7 @@ def download(link, folder='.'):
             netloc = urljoin(link, netloc)
             file_name = f'{folder}/{name}'
             with open(file_name, 'wb') as file:
-                file.write(requests.get(netloc).content)
+                file.write(requests.get(netloc, stream=True).content)
             bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
@@ -76,3 +76,6 @@ def download(link, folder='.'):
 #     test = 'https://page-loader.hexlet.repl.co'
 #     print(tempdir)
 #     download(test, tempdir)
+# 
+# test = 'https://page-loader.hexlet.repl.co'
+# download(test)
