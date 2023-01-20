@@ -51,9 +51,10 @@ def netloc_check(link, item):
 
 def download(link, folder='.'):
     folder_name = change_name(link)
+    
+    soup = requesting(link)
     path_to_folder = make_folder(folder_name, folder)
     logging.info(f'created a folder {path_to_folder}')
-    soup = requesting(link)
     # print(soup)
     html_path = f'{folder}/{flatter_paths(folder_name)}'
     data, juice = finding_tags(soup, link)
