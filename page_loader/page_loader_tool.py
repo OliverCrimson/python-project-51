@@ -56,7 +56,8 @@ def download(link, folder='.'):
     path_to_folder = make_folder(folder_name, folder)
     logging.info(f'created a folder {path_to_folder}')
     
-    html_path = f'{folder}{flatter_paths(folder_name)}'
+    html_path = f'{folder}/{flatter_paths(folder_name)}'
+    logging.info(f'html file path is {html_path}')
     data, juice = finding_tags(soup, link)
     with PixelBar('Downloading..', max=len(data)) as bar:
         for netloc, name in data:
@@ -67,8 +68,9 @@ def download(link, folder='.'):
             bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
+            
     # print(html_path)
-    return html_file
+    return html_path
 
 
 # test = 'https://page-loader.hexlet.repl.co'
