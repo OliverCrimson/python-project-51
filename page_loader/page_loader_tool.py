@@ -69,9 +69,8 @@ def download(link, folder='.'):
             bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
-            
-    # print(html_path)
-    return pathlib.Path(html_path)
+    return flatter_paths(folder_name)
+
 
 # with tempfile.TemporaryDirectory() as tempdir:
 #     test = 'https://page-loader.hexlet.repl.co'
