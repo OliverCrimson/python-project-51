@@ -67,6 +67,7 @@ def download(link, folder='.'):
             bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
-        return html_file
-# test = 'https://page-loader.hexlet.repl.co'
-# download(test)
+    
+    return html_path
+test = 'https://page-loader.hexlet.repl.co'
+download(test, '/home/monkeybusiness/Desktop')
