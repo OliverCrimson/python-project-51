@@ -45,6 +45,3 @@ def normalize_string(link):
         return first_part + '-' + second_part
 
 # print(normalize_string('assets/application.css'))
-
-
-

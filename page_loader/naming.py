@@ -1,5 +1,7 @@
 import os.path
-from urllib.parse import urlparse
+import re
+from urllib.parse import urlparse, urljoin
+
 
 # import pathlib
 #
@@ -28,5 +30,28 @@ def naming_folders(link):
     result = f'{change_name(link)}_files'
     return result
 
-# x = 'https://site.com/blog/about'
-# print(naming_folders(x))
+
+def flatter_paths(path_like):
+
+    no_pref = path_like.removeprefix('/')
+    devided = os.path.splitext(no_pref)
+  
+    stripped = change_name(devided[0])
+    if devided[1]:
+        return stripped + devided[1]
+    else:
+        result = change_name(devided[0])
+        return result + '.html'
+
+ 
+
+# x = '/assets/professions/nodejs.png'
+# x = 'site.com/photos/me.jpg'
+# # 
+# print(flatter_paths(x))
+# # print(urlparse(x).path.split('/'))
+# site-com-blog-about-assets-styles.css
+
+# x = '/assets/professions/nodejs.png'
+# y = 'https://page-loader.hexlet.repl.co'
+# print(urljoin(y, x))

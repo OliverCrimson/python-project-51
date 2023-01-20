@@ -1,59 +1,71 @@
-
 import logging
-import pathlib
 from urllib.parse import urljoin, urlparse
-
-
-from page_loader.content_extractor \
-    import downloading_imgs, replacin, img_links_array
-from page_loader.mkfolders import mk_dir
-from page_loader.naming import change_name
+import pathlib
+import requests
+from bs4 import BeautifulSoup
+from progress.bar import PixelBar
+from page_loader.mkfolders import make_folder
+from page_loader.naming import naming_folders, change_name, flatter_paths
 from page_loader.request_module import requesting
+
+
 
 logging.basicConfig(format='%(levelname)s: %(message)s',
                     level=logging.INFO)
 
-CURRENT_DIR = pathlib.Path.cwd()
 
 
-# def download(link, folder='.'):# noqa
-#     logging.info(f"requested url: {link}")
-#     name = change_name(link)
-#     response = requesting(link)
-#     x = mk_dir(link, folder)
-#     val_path = pathlib.Path(f"{x}")
-#     logging.info(f'valid path is {x}')
-#     # val_path.mkdir(exist_ok=True)
-#     images = response.find_all('img')
-#     links = response.find_all('link')
-#     scripts = response.find_all('script')
-#     lst, lst_links, script_links = [], [], []
-#     path_for_html = f'{change_name(link)}_files'
-#     for tag in images:
-#         valid_link = urljoin(link, tag['src'])
-#         if urlparse(valid_link).netloc == urlparse(link).netloc:
-#             lst.append(tag['src'])
-#             tag['src'] = f"{path_for_html}/{change_name(urlparse(link).netloc)}-{replacin(tag['src'])}"
-#     for tag in links:
-#         valid_link = urljoin(link, tag['href'])
-#         if urlparse(valid_link).netloc == urlparse(link).netloc:
-#             lst_links.append(tag['href'])
-#             tag['href'] = f"{path_for_html}/{change_name(urlparse(link).netloc)}-{replacin(tag['href'])}"
-#     for tag in scripts:
-#         if tag.get('src'):
-#             valid_link = urljoin(link, tag['src'])
-#             if urlparse(valid_link).netloc == urlparse(link).netloc:
-#                 script_links.append(tag['src'])
-#                 tag['src'] = f"{path_for_html}/{change_name(urlparse(link).netloc)}-{replacin(tag['src'])}"
-#     html_file_path = f"{folder}/{name}.html"
-#     with open(html_file_path, "w") as file:
-#         file.write(response.prettify())
-#         logging.info(f'write html file: '
-#                      f'{pathlib.Path.cwd()}/{name}.html')
-#     big_list = lst + lst_links + script_links
-#     result = img_links_array(big_list, link)
-#     downloading_imgs(link, result, x)
-#     logging.info(f"Page was downloaded as "
-#                  f"'{folder}/{name}.html'")
-#     return html_file_path
 
+
+
+def finding_tags(soup, link, folder=pathlib.Path.cwd()):
+    search_data = [
+        ('img', 'src'),
+        ('link', 'href'),
+        ('script', 'src')
+    ]
+
+    data_arr = []
+    for one, two in search_data:
+        required = [
+            (one_name, two) for one_name in soup(one) 
+            if one_name.get(two) is not None
+        ]
+        data_arr.extend(required)
+    twin = []
+    for one, two in data_arr:
+        if netloc_check(one.get(two), link):
+            url = one.get(two)
+            name_for_item = change_name(link)
+            one[two] = f'{name_for_item}_files/' \
+                       f'{change_name(link)}-' \
+                       f'{flatter_paths(one[two])}'
+            twin.append((url, one[two]))
+    return twin, soup.prettify()
+
+
+def netloc_check(link, item):
+    if urlparse(link).netloc != urlparse(item).netloc:
+        return item
+
+
+def download(link, folder='.'):
+    folder_name = change_name(link)
+    path_to_folder = make_folder(folder_name, folder)
+    logging.info(f'created a folder {path_to_folder}')
+    soup = requesting(link)
+    # print(soup)
+    html_path = f'{folder}/{flatter_paths(folder_name)}'
+    data, juice = finding_tags(soup, link)
+    with PixelBar('Downloading..', max=len(data)) as bar:
+        for netloc, name in data:
+            netloc = urljoin(link, netloc)
+            file_name = f'{folder}/{name}'
+            with open(file_name, 'wb') as file:
+                file.write(requests.get(netloc).content)
+            bar.next()
+        with open(html_path, 'w') as html_file:
+            html_file.write(juice)
+
+# test = 'https://page-loader.hexlet.repl.co'
+# download(test)
