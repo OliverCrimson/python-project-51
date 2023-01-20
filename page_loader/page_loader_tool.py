@@ -50,7 +50,7 @@ def netloc_check(link, item):
         return item
 
 
-def downloading(link, folder='.'):
+def download(link, folder='.'):
     folder_name = change_name(link)
     soup = requesting(link)
     path_to_folder = make_folder(folder_name, folder)
@@ -68,7 +68,7 @@ def downloading(link, folder='.'):
             bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
-    return flatter_paths(folder_name)
+    return html_path
 
 
 # with tempfile.TemporaryDirectory() as tempdir:

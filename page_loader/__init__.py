@@ -1,3 +1,3 @@
-from page_loader.page_loader_tool import downloading
+from page_loader.page_loader_tool import download
 
-__all__ = ['downloading']
+__all__ = ['download']

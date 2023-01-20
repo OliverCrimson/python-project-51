@@ -3,13 +3,13 @@ import logging
 import sys
 
 from page_loader.cli import parsing
-from page_loader.page_loader_tool import downloading
+from page_loader.page_loader_tool import download
 
 
 def main():
     try:
         arguments = parsing()
-        result = downloading(
+        result = download(
             arguments.url,
             arguments.output
         )
