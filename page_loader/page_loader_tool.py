@@ -66,10 +66,10 @@ def download(link, folder='.'):
     return html_path
 
 
-with tempfile.TemporaryDirectory() as tempdir:
-    test = 'https://page-loader.hexlet.repl.co'
-    print(tempdir)
-    download(test, tempdir)
+# with tempfile.TemporaryDirectory() as tempdir:
+#     test = 'https://page-loader.hexlet.repl.co'
+#     print(tempdir)
+#     download(test, tempdir)
 
 # test = 'https://page-loader.hexlet.repl.co'
 # download(test)
