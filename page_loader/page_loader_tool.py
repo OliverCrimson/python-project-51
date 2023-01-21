@@ -57,9 +57,11 @@ def download(link, folder='.'):
         netloc = urljoin(link, netloc)
         file_name = f'{folder}/{name}'
         with open(file_name, 'wb') as file:
-            file.write(requests.get(netloc).content)
+            content = requests.get(netloc).content
+            file.write(content)
             # bar.next()
         with open(html_path, 'w') as html_file:
+            # print(juice)
             html_file.write(juice)
     # pth = pathlib.Path(f'{pathlib.Path.cwd()}/{html_path}')
     # print(pth)
