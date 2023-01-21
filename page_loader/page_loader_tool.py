@@ -14,17 +14,12 @@ logging.basicConfig(format='%(levelname)s: %(message)s',
                     level=logging.INFO)
 
 
-
-
-
-
 def finding_tags(soup, link):
     search_data = [
         ('img', 'src'),
         ('link', 'href'),
         ('script', 'src')
     ]
-
     data_arr = []
     for one, two in search_data:
         required = [
@@ -54,17 +49,16 @@ def download(link, folder='.'):
     soup = requesting(link)
     path_to_folder = make_folder(folder_name, folder)
     logging.info(f'created a folder {path_to_folder}')
-    
     html_path = f'{folder}/{flatter_paths(folder_name)}'
     logging.info(f'html file path is {html_path}')
     data, juice = finding_tags(soup, link)
-    with PixelBar('Downloading..', max=len(data)) as bar:
-        for netloc, name in data:
-            netloc = urljoin(link, netloc)
-            file_name = f'{folder}/{name}'
-            with open(file_name, 'wb') as file:
-                file.write(requests.get(netloc).content)
-            bar.next()
+    # with PixelBar('Downloading..', max=len(data)) as bar:
+    for netloc, name in data:
+        netloc = urljoin(link, netloc)
+        file_name = f'{folder}/{name}'
+        with open(file_name, 'wb') as file:
+            file.write(requests.get(netloc).content)
+            # bar.next()
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
     # pth = pathlib.Path(f'{pathlib.Path.cwd()}/{html_path}')
@@ -72,10 +66,10 @@ def download(link, folder='.'):
     return html_path
 
 
-# with tempfile.TemporaryDirectory() as tempdir:
-#     test = 'https://page-loader.hexlet.repl.co'
-#     print(tempdir)
-#     download(test, tempdir)
+with tempfile.TemporaryDirectory() as tempdir:
+    test = 'https://page-loader.hexlet.repl.co'
+    print(tempdir)
+    download(test, tempdir)
 
 # test = 'https://page-loader.hexlet.repl.co'
 # download(test)
