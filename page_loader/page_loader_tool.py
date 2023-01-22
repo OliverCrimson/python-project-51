@@ -29,7 +29,7 @@ def finding_tags(soup, link):
         data_arr.extend(required)
     twin = []
     for one, two in data_arr:
-        if netloc_check(one.get(two), link):
+        if netloc_check(link, one.get(two)):
             url = one.get(two)
             name_for_item = change_name(link)
             one[two] = f'{name_for_item}_files/' \
@@ -39,10 +39,16 @@ def finding_tags(soup, link):
     return twin, soup.prettify()
 
 
-def netloc_check(link, item):
-    if urlparse(link).netloc != urlparse(item).netloc:
-        return item
 
+def netloc_check(link, item):
+    splitted = urlparse(item)
+    parsed_link = urlparse(link)
+    if splitted.netloc == parsed_link.netloc:
+        return splitted
+    if splitted.netloc == '':
+        return splitted
+    
+    
 
 def download(link, folder='.'):
     folder_name = change_name(link)
@@ -68,10 +74,14 @@ def download(link, folder='.'):
     return html_path
 
 
-# with tempfile.TemporaryDirectory() as tempdir:
-#     test = 'https://page-loader.hexlet.repl.co'
-#     print(tempdir)
-#     download(test, tempdir)
-
+# # with tempfile.TemporaryDirectory() as tempdir:
+# #     test = 'https://page-loader.hexlet.repl.co'
+# #     print(tempdir)
+# #     download(test, tempdir)
 # test = 'https://page-loader.hexlet.repl.co'
+# # 
+# # 
+# # test2 = 'https://ru.hexlet.io/u/new?from=https%3A%2F%2Fru.hexlet.io%2Fprojects%2F51%2Fmembers%2F26050%3Fstep%3D4'
 # download(test)
+# x = requesting(test2)
+# finding_tags(x, test2)
