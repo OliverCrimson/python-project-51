@@ -47,11 +47,17 @@ def flatter_paths(path_like):
 
 # x = '/assets/professions/nodejs.png'
 # x = 'site.com/photos/me.jpg'
-# # 
-# print(flatter_paths(x))
+# x = flatter_paths('https://site.com/blog/about/assets/styles.css')
+# print(x)
+# # print(flatter_paths(x))
 # # print(urlparse(x).path.split('/'))
 # site-com-blog-about-assets-styles.css
-
+# site-com-blog-about_files/site-com-blog-about.html
+# site-com-blog-about_files/site-com-blog-about-blog-about.html"
 # x = '/assets/professions/nodejs.png'
 # y = 'https://page-loader.hexlet.repl.co'
 # print(urljoin(y, x))
+# y = 'https://site.com/assets/scripts.js'
+# print(flatter_paths(y))
+# x = urlparse('https://site.com/blog/about/assets/styles.css')
+# print(x)

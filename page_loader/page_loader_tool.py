@@ -3,6 +3,7 @@ import tempfile
 from urllib.parse import urljoin, urlparse
 import pathlib
 import requests
+import requests_mock
 from progress.bar import PixelBar
 from page_loader.mkfolders import make_folder
 from page_loader.naming import naming_folders, change_name, flatter_paths
@@ -32,9 +33,14 @@ def finding_tags(soup, link):
         if netloc_check(link, one.get(two)):
             url = one.get(two)
             name_for_item = change_name(link)
-            one[two] = f'{name_for_item}_files/' \
-                       f'{change_name(link)}-' \
+            asd = urljoin(urlparse(link).netloc, one[two])
+            one[two] = f'{name_for_item}_files/'\
+                    f'{change_name(urlparse(link).netloc)}-'\
                        f'{flatter_paths(one[two])}'
+                       # f'{change_name(urlparse(link).netloc)}-' \
+                       
+                       
+                       
             twin.append((url, one[two]))
     return twin, soup.prettify()
 
@@ -85,3 +91,10 @@ def download(link, folder='.'):
 # download(test)
 # x = requesting(test2)
 # finding_tags(x, test2)
+
+# with open('/home/monkeybusiness/new_proj/python-project-51/tests/fixtures/original.html', 'r') as file:
+#     x = file.read()
+# 
+# with requests_mock.Mocker() as m:
+#     m.get('https://site.com/blog/about', text=x)
+#     finding_tags(requesting())
