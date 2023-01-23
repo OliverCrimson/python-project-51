@@ -42,3 +42,10 @@ def flatter_paths(path_like):
     else:
         result = change_name(devided[0])
         return result + '.html'
+
+
+def correcting_links(item_link, original_link):
+    x = urlparse(item_link).path
+    y = urlparse(original_link).netloc
+    result = f'{y}{x}'
+    return result

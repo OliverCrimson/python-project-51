@@ -6,7 +6,7 @@ import requests
 import requests_mock
 from progress.bar import PixelBar
 from page_loader.mkfolders import make_folder
-from page_loader.naming import naming_folders, change_name, flatter_paths
+from page_loader.naming import naming_folders, change_name, flatter_paths, correcting_links
 from page_loader.request_module import requesting
 
 
@@ -34,9 +34,7 @@ def finding_tags(soup, link):
             url = one.get(two)
             name_for_item = change_name(link)
             asd = urljoin(urlparse(link).netloc, one[two])
-            one[two] = f'{name_for_item}_files/'\
-                f'{change_name(urlparse(link).netloc)}-' \
-                       f'{flatter_paths(one[two])}'
+            one[two] = f'{name_for_item}_files/{flatter_paths(correcting_links(one[two], link))}'
                        
                        
                        

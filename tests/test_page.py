@@ -64,7 +64,6 @@ def test_content():
         mock.get(fake_image, content=image)
         mock.get(fake_script, content=script)
         mock.get(fake_style, text=style)
-        print(requests.get(fake_adress).text)
         x = requesting(fake_adress)
         y = finding_tags(x, fake_adress)
         with tempfile.TemporaryDirectory() as tempdir:
