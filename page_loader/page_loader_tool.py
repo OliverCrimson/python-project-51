@@ -35,9 +35,9 @@ def finding_tags(soup, link):
             name_for_item = change_name(link)
             asd = urljoin(urlparse(link).netloc, one[two])
             one[two] = f'{name_for_item}_files/'\
-                    f'{change_name(urlparse(link).netloc)}-'\
+                f'{change_name(urlparse(link).netloc)}-' \
                        f'{flatter_paths(one[two])}'
-                       # f'{change_name(urlparse(link).netloc)}-' \
+                       
                        
                        
                        
@@ -79,22 +79,3 @@ def download(link, folder='.'):
     # print(pth)
     return html_path
 
-
-# # with tempfile.TemporaryDirectory() as tempdir:
-# #     test = 'https://page-loader.hexlet.repl.co'
-# #     print(tempdir)
-# #     download(test, tempdir)
-# test = 'https://page-loader.hexlet.repl.co'
-# # 
-# # 
-# # test2 = 'https://ru.hexlet.io/u/new?from=https%3A%2F%2Fru.hexlet.io%2Fprojects%2F51%2Fmembers%2F26050%3Fstep%3D4'
-# download(test)
-# x = requesting(test2)
-# finding_tags(x, test2)
-
-# with open('/home/monkeybusiness/new_proj/python-project-51/tests/fixtures/original.html', 'r') as file:
-#     x = file.read()
-# 
-# with requests_mock.Mocker() as m:
-#     m.get('https://site.com/blog/about', text=x)
-#     finding_tags(requesting())
