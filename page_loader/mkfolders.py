@@ -14,6 +14,3 @@ def make_folder(link, folder=''):
         return directory
     else:
         raise FileNotFoundError
-
-
-# make_folder('https://site.com/blog/about')

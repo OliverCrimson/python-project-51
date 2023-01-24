@@ -1,13 +1,5 @@
 import os.path
-import re
-from urllib.parse import urlparse, urljoin
-
-
-# import pathlib
-#
-# from page_loader.loader import namin
-#
-# from page_loader.content_extractor import replacin
+from urllib.parse import urlparse
 
 
 def change_name(link):
@@ -32,10 +24,8 @@ def naming_folders(link):
 
 
 def flatter_paths(path_like):
-
     no_pref = path_like.removeprefix('/')
     devided = os.path.splitext(no_pref)
-  
     stripped = change_name(devided[0])
     if devided[1]:
         return stripped + devided[1]

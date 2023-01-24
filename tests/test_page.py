@@ -10,7 +10,6 @@ from page_loader.mkfolders import make_folder
 from page_loader.page_loader_tool import download, finding_tags
 
 from page_loader.loader import normalize_string
-# from page_loader.mkfolders import mk_dir
 from page_loader.naming import change_name
 from page_loader.request_module import requesting
 
@@ -43,7 +42,6 @@ def test_folder_creation():
 def test_download():
     with tempfile.TemporaryDirectory() as tempdir:
         expect = f'{tempdir}/page-loader-hexlet-repl-co.html'
-        print(expect)
         assert expect == download('https://page-loader.hexlet.repl.co', tempdir)
 
 

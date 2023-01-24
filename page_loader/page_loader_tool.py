@@ -33,12 +33,8 @@ def finding_tags(soup, link):
         if netloc_check(link, one.get(two)):
             url = one.get(two)
             name_for_item = change_name(link)
-            asd = urljoin(urlparse(link).netloc, one[two])
-            one[two] = f'{name_for_item}_files/{flatter_paths(correcting_links(one[two], link))}'
-                       
-                       
-                       
-                       
+            changed_item_string = flatter_paths(correcting_links(one[two], link))
+            one[two] = f'{name_for_item}_files/{changed_item_string}'           
             twin.append((url, one[two]))
     return twin, soup.prettify()
 
@@ -62,18 +58,18 @@ def download(link, folder='.'):
     html_path = f'{folder}/{flatter_paths(folder_name)}'
     logging.info(f'html file path is {html_path}')
     data, juice = finding_tags(soup, link)
-    # with PixelBar('Downloading..', max=len(data)) as bar:
-    for netloc, name in data:
-        netloc = urljoin(link, netloc)
-        file_name = f'{folder}/{name}'
-        with open(file_name, 'wb') as file:
-            content = requests.get(netloc).content
-            file.write(content)
-            # bar.next()
-        with open(html_path, 'w') as html_file:
-            # print(juice)
-            html_file.write(juice)
-    # pth = pathlib.Path(f'{pathlib.Path.cwd()}/{html_path}')
-    # print(pth)
+    if len(juice) != 0:
+        with PixelBar('Downloading..', max=len(data)) as bar:
+            for netloc, name in data:
+                netloc = urljoin(link, netloc)
+                file_name = f'{folder}/{name}'
+                with open(file_name, 'wb') as file:
+                    content = requests.get(netloc).content
+                    file.write(content)
+                    bar.next()
+                with open(html_path, 'w') as html_file:
+                    html_file.write(juice)
+    else:
+        logging.error(f'Current page has nothing available to download.')
     return html_path
 
