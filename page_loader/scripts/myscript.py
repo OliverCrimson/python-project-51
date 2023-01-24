@@ -13,9 +13,10 @@ def main():
             arguments.url,
             arguments.output
         )
+        logging.info('Downloading complete')
         return result
     except Exception as error:
-        logging.error(error)
+        logging.error(f'{error}')
         logging.info('Page is not available')
         sys.exit(1)
 
