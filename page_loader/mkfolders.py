@@ -11,5 +11,5 @@ def make_folder(link, folder=''):
         directory.mkdir(parents=True, exist_ok=True)
         logging.info(f'Created directory {directory}')
         return directory
-    except Exception as ex:
+    except FileNotFoundError as ex:
         raise ex

@@ -63,7 +63,7 @@ def download(link, folder='.'):
                     file.write(content)
                     bar.next()
         with open(html_path, 'w') as html_file:
-            html_file.write(juice)       
+            html_file.write(juice)
     else:
         logging.warning('Current page has nothing available to download.')
     return html_path
