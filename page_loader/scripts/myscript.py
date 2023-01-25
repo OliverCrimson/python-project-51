@@ -6,9 +6,13 @@ from page_loader.cli import parsing
 from page_loader.page_loader_tool import download
 
 
+logging.basicConfig(format='%(levelname)s: %(message)s',
+                    level=logging.INFO)
+
+
 def main():
+    arguments = parsing()
     try:
-        arguments = parsing()
         result = download(
             arguments.url,
             arguments.output
@@ -17,7 +21,7 @@ def main():
         return result
     except Exception as error:
         logging.error(error)
-        logging.info('Page is not available')
+        logging.info(f'Page is not available')
         sys.exit(1)
 
 

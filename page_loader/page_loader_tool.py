@@ -7,10 +7,6 @@ from page_loader.naming import change_name, flatter_paths, correcting_links
 from page_loader.request_module import requesting
 
 
-logging.basicConfig(format='%(levelname)s: %(message)s',
-                    level=logging.INFO)
-
-
 def finding_tags(soup, link):
     search_data = [
         ('img', 'src'),
@@ -63,9 +59,8 @@ def download(link, folder='.'):
                         content = requests.get(netloc).content
                         file.write(content)
                         bar.next()
-                    except Exception as e:
-                        cause_info = (e.__class__, e, e.__traceback__)
-                        logging.error(str(e), exc_info=cause_info)
+                    except requests.exceptions.RequestException:
+                        logging.error('Bad request')
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
     else:
