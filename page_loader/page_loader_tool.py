@@ -63,8 +63,9 @@ def download(link, folder='.'):
                         content = requests.get(netloc).content
                         file.write(content)
                         bar.next()
-                    except requests.exceptions.RequestException:
-                        logging.error('Bad request')
+                    except Exception as e:
+                        cause_info = (e.__class__, e, e.__traceback__)
+                        logging.error(str(e), exc_info=cause_info)
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
     else:

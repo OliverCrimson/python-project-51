@@ -16,7 +16,7 @@ def main():
         logging.info('Downloading complete')
         return result
     except Exception as error:
-        logging.error(f'{error}')
+        logging.error(error)
         logging.info('Page is not available')
         sys.exit(1)
 
