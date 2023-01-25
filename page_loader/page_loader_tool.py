@@ -59,9 +59,12 @@ def download(link, folder='.'):
                 netloc = urljoin(link, netloc)
                 file_name = f'{folder}/{name}'
                 with open(file_name, 'wb') as file:
-                    content = requests.get(netloc).content
-                    file.write(content)
-                    bar.next()
+                    try:
+                        content = requests.get(netloc).content
+                        file.write(content)
+                        bar.next()
+                    except requests.exceptions.RequestException:
+                        logging.error('Bad request')
         with open(html_path, 'w') as html_file:
             html_file.write(juice)
     else:
