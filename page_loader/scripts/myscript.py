@@ -21,7 +21,7 @@ def main():
         return result
     except Exception as error:
         logging.error(error)
-        logging.info(f'Page is not available')
+        logging.info(f'Page is not available due to {str(error)}')
         sys.exit(1)
 
 
