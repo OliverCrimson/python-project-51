@@ -13,7 +13,7 @@ from page_loader.loader import normalize_string
 from page_loader.naming import change_name
 from page_loader.request_module import requesting
 
-FIXTURES_PATH = f'{pathlib.Path.cwd()}/fixtures'
+FIXTURES_PATH = f'{pathlib.Path.cwd()}/tests/fixtures'
 LINK = 'https://site.com/blog/about'
 
 

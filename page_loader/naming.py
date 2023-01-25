@@ -16,7 +16,7 @@ def normalize_links(link):
         second_part += '.html'
     result = first_part + second_part
     return result
-    
+
 
 def naming_folders(link):
     result = f'{change_name(link)}_files'

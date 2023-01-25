@@ -20,7 +20,7 @@ def finding_tags(soup, link):
     data_arr = []
     for one, two in search_data:
         required = [
-            (one_name, two) for one_name in soup(one) 
+            (one_name, two) for one_name in soup(one)
             if one_name.get(two) is not None
         ]
         data_arr.extend(required)
@@ -29,11 +29,12 @@ def finding_tags(soup, link):
         if netloc_check(link, one.get(two)):
             url = one.get(two)
             name_for_item = change_name(link)
-            changed_item_string = flatter_paths(correcting_links(one[two], link))
-            one[two] = f'{name_for_item}_files/{changed_item_string}'           
+            changed_item_string = flatter_paths(correcting_links
+                                                (one[two], link)
+                                                )
+            one[two] = f'{name_for_item}_files/{changed_item_string}'
             twin.append((url, one[two]))
     return twin, soup.prettify()
-
 
 
 def netloc_check(link, item):
@@ -43,8 +44,7 @@ def netloc_check(link, item):
         return splitted
     if splitted.netloc == '':
         return splitted
-    
-    
+
 
 def download(link, folder='.'):
     folder_name = change_name(link)
@@ -62,10 +62,8 @@ def download(link, folder='.'):
                     content = requests.get(netloc).content
                     file.write(content)
                     bar.next()
-                with open(html_path, 'w') as html_file:
-                    html_file.write(juice)
-            
+        with open(html_path, 'w') as html_file:
+            html_file.write(juice)       
     else:
-        logging.warning(f'Current page has nothing available to download.')
+        logging.warning('Current page has nothing available to download.')
     return html_path
-
