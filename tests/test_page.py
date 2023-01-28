@@ -19,7 +19,7 @@ def test_change_name():
 
 
 def read_from_file(file, mode):
-    with open (file, mode) as f:
+    with open(file, mode) as f:
         f = f.read()
         return f
 
