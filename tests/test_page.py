@@ -4,11 +4,11 @@ import tempfile
 import requests_mock
 
 from page_loader.mkfolders import make_folder
-from page_loader.page_loader_tool import download, finding_tags
+from page_loader.page_loader_tool import download
 
 from page_loader.loader import normalize_string
 from page_loader.naming import change_name
-from page_loader.request_module import requesting
+
 
 FIXTURES_PATH = f'{pathlib.Path.cwd()}/tests/fixtures'
 LINK = 'https://site.com/blog/about'
