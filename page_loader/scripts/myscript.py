@@ -18,7 +18,8 @@ def main():
             arguments.output
         )
         logging.info('Downloading complete')
-        print('Downloading complete')
+        # print('Downloading complete')
+        print(result)
         sys.exit(0)
     except Exception as error:
         logging.error(error)
