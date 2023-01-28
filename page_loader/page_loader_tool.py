@@ -13,15 +13,15 @@ def finding_tags(soup, link):
         ('link', 'href'),
         ('script', 'src')
     ]
-    data_arr = []
-    for one, two in search_data:
+    data_list = []
+    for first, second in search_data:
         required = [
-            (one_name, two) for one_name in soup(one)
-            if one_name.get(two) is not None
+            (one_name, second) for one_name in soup(first)
+            if one_name.get(second) is not None
         ]
-        data_arr.extend(required)
+        data_list.extend(required)
     twin = []
-    for one, two in data_arr:
+    for one, two in data_list:
         if netloc_check(link, one.get(two)):
             url = one.get(two)
             name_for_item = change_name(link)
