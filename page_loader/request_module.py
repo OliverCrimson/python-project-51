@@ -1,4 +1,4 @@
-import logging
+# import logging
 # import sys
 
 import requests
@@ -6,13 +6,11 @@ from bs4 import BeautifulSoup
 
 
 def requesting(link):
-    
     respond = requests.get(link)
     respond.raise_for_status()
-    logging.info(f'respond {respond.raise_for_status()}')
     # if respond.status_code != 200:
     #     logging.warning(f"respond status code: "
     #                     f"{respond.status_code}")
-    #     raise Exception 
+    #     raise Exception
     soup = BeautifulSoup(respond.content, 'html.parser')
     return soup
