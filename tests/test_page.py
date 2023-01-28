@@ -1,9 +1,6 @@
 import os
 import pathlib
 import tempfile
-
-import pytest
-import requests
 import requests_mock
 
 from page_loader.mkfolders import make_folder
@@ -21,7 +18,6 @@ def test_change_name():
     assert change_name('https://page-loader.hexlet.repl.co') == 'page-loader-hexlet-repl-co'
 
 
-
 def read_from_file(file, mode):
     with open (file, mode) as f:
         f = f.read()
@@ -33,18 +29,18 @@ def test_string():
     actual = normalize_string('https://site.com/blog/about/assets/styles.css')
     assert expected == actual
 
+
 def test_folder_creation():
     expected_dir_name = 'site-com-blog-about_files'
     make_folder('https://site.com/blog/about')
     assert pathlib.Path(expected_dir_name).exists()
     os.rmdir(expected_dir_name)
 
+
 def test_download():
     with tempfile.TemporaryDirectory() as tempdir:
         expect = f'{tempdir}/page-loader-hexlet-repl-co.html'
         assert expect == download('https://page-loader.hexlet.repl.co', tempdir)
-
-
 
 
 def test_content():
@@ -62,14 +58,9 @@ def test_content():
         mock.get(fake_image, content=image)
         mock.get(fake_script, content=script)
         mock.get(fake_style, text=style)
-        x = requesting(fake_adress)
-        y = finding_tags(x, fake_adress)
+        # x = requesting(fake_adress)
+        # y = finding_tags(x, fake_adress)
         with tempfile.TemporaryDirectory() as tempdir:
             final = download(fake_adress, tempdir)
             result = read_from_file(final, 'r')
             assert result == expected
-
-
-
-
-
