@@ -3,7 +3,6 @@ __pycache__
 dist/
 *.pyc
 .venv/
-coverage.xml
 .pytest_cache/
 .pytest_cache
 .vim
