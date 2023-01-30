@@ -32,36 +32,32 @@ def test_change_name():
     assert change_name(LINK) == 'site-com-blog-about'
 
 
-def test_string():
+def test_normalize_string():
     expected = 'site-com-blog-about-assets-styles.css'
     actual = normalize_string('https://site.com/blog/about/assets/styles.css')
     assert expected == actual
 
 
-def test_folder_creation():
+def test_make_folder():
     expected_dir_name = 'site-com-blog-about_files'
     with tempfile.TemporaryDirectory() as tempdir:
         make_folder('https://site.com/blog/about', tempdir)
         assert pathlib.Path(f'{tempdir}/{expected_dir_name}').exists()
 
 
-def test_content():
+def test_download():
     original = read_from_file(ORIGINAL, 'r')
     expected = read_from_file(EXPECTED, 'r')
     image = read_from_file(IMAGE, 'rb')
     script = read_from_file(SCRIPT, 'rb')
     style = read_from_file(STYLES, 'r')
     with requests_mock.Mocker() as mock:
-        fake_adress = 'https://site.com/blog/about'
-        fake_image = 'https://site.com/photos/me.jpg'
-        fake_script = 'https://site.com/assets/scripts.js'
-        fake_style = 'https://site.com/blog/about/assets/styles.css'
-        mock.get(fake_adress, text=original)
-        mock.get(fake_image, content=image)
-        mock.get(fake_script, content=script)
-        mock.get(fake_style, text=style)
+        mock.get(LINK, text=original)
+        mock.get(FAKE_IMAGE, content=image)
+        mock.get(FAKE_SCRIPT, content=script)
+        mock.get(FAKE_CSS, text=style)
         with tempfile.TemporaryDirectory() as tempdir:
-            final = download(fake_adress, tempdir)
+            final = download(LINK, tempdir)
             result = read_from_file(final, 'r')
             expected_download_result = f'{tempdir}/site-com-blog-about.html'
             assert result == expected
