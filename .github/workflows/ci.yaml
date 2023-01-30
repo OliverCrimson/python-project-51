@@ -1,30 +1,34 @@
-name: CI check
-on: push
+name: CI
+
+on:
+  - push
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.10.0]
+
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
-      # make depends on poetry
+          python-version: ${{ matrix.python-version }}
+        # make depends on poetry
+      - name: install1
+        run:  pip install poetry
       - name: Install dependencies
-        run: |
-          pip install poetry
-          make build
+        run:
           make install
-      - name: Run linter
-        run: |
-          make lint
-      - name: Run Tests
-        run: |
-          poetry run pytest
-      - name: Test coverage
-        uses: paambaati/codeclimate-action@v3.0.0
+      - name: Run Pytest
+        run:
+          make check
+      - name: Test & publish code coverage
+        uses: paambaati/codeclimate-action@v2.7.4
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID}}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
-          coverageCommand: poetry run pytest --cov=page_loader --cov-report xml tests/
+          coverageCommand: make test-coverage
           debug: true
