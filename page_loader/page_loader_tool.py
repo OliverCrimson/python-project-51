@@ -20,17 +20,17 @@ def finding_tags(soup, link):
             if one_name.get(second) is not None
         ]
         data_list.extend(required)
-    twin = []
-    for one, two in data_list:
-        if netloc_check(link, one.get(two)):
-            url = one.get(two)
+    items_list = []
+    for actual, requested in data_list:
+        if netloc_check(link, actual.get(requested)):
+            url = actual.get(requested)
             name_for_item = change_name(link)
             changed_item_string = flatter_paths(correcting_links
-                                                (one[two], link)
+                                                (actual[requested], link)
                                                 )
-            one[two] = f'{name_for_item}_files/{changed_item_string}'
-            twin.append((url, one[two]))
-    return twin, soup.prettify()
+            actual[requested] = f'{name_for_item}_files/{changed_item_string}'
+            items_list.append((url, actual[requested]))
+    return items_list, soup.prettify()
 
 
 def netloc_check(link, item):
@@ -47,22 +47,19 @@ def download(link, folder='.'):
     soup = requesting(link)
     make_folder(folder_name, folder)
     html_path = f'{folder}/{flatter_paths(folder_name)}'
-    data, juice = finding_tags(soup, link)
-    if len(juice) != 0:
+    data, page = finding_tags(soup, link)
+    if len(page) != 0:
         logging.info(f'Downloading from {link}')
         with PixelBar('Downloading..', max=len(data)) as bar:
             for netloc, name in data:
                 netloc = urljoin(link, netloc)
                 file_name = f'{folder}/{name}'
                 with open(file_name, 'wb') as file:
-                    try:
-                        content = requests.get(netloc).content
-                        file.write(content)
-                        bar.next()
-                    except requests.exceptions.RequestException:
-                        logging.error('Bad request')
+                    content = requests.get(netloc).content
+                    file.write(content)
+                    bar.next()
         with open(html_path, 'w') as html_file:
-            html_file.write(juice)
+            html_file.write(page)
     else:
         logging.warning('Current page has nothing available to download.')
     return html_path

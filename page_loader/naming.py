@@ -8,16 +8,6 @@ def change_name(link):
     return result
 
 
-def normalize_links(link):
-    splitted = os.path.splitext(link)
-    first_part = change_name(splitted[0])
-    second_part = splitted[1]
-    if '.' not in second_part:
-        second_part += '.html'
-    result = first_part + second_part
-    return result
-
-
 def naming_folders(link):
     result = f'{change_name(link)}_files'
     return result

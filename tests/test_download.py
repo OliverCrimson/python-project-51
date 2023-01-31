@@ -4,10 +4,7 @@ import requests_mock
 
 from page_loader.mkfolders import make_folder
 from page_loader.page_loader_tool import download
-
-from page_loader.loader import normalize_string
-from page_loader.naming import change_name
-
+from page_loader.naming import change_name, flatter_paths
 
 FIXTURES_PATH = f'{pathlib.Path.cwd()}/tests/fixtures'
 LINK = 'https://site.com/blog/about'
@@ -34,7 +31,7 @@ def test_change_name():
 
 def test_normalize_string():
     expected = 'site-com-blog-about-assets-styles.css'
-    actual = normalize_string('https://site.com/blog/about/assets/styles.css')
+    actual = flatter_paths('https://site.com/blog/about/assets/styles.css')
     assert expected == actual
 
 

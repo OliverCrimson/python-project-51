@@ -4,3 +4,10 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c4672b2e25b1d09d4c86/maintainability)](https://codeclimate.com/github/OliverCrimson/python-project-51/maintainability)
 ### Test coverage:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c4672b2e25b1d09d4c86/test_coverage)](https://codeclimate.com/github/OliverCrimson/python-project-51/test_coverage)
+
+---
+### Page-loader is utility program which downloads available resources from a web page.
+- 
+
+## Demo:
+[![asciicast](https://asciinema.org/a/FhcZqZVVjF1ONJzDi8dG2mRsd.svg)](https://asciinema.org/a/FhcZqZVVjF1ONJzDi8dG2mRsd)

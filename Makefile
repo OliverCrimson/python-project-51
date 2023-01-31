@@ -1,17 +1,18 @@
+
 install:
-	poetry install
+	python3 -m pip install --user dist/*.whl
 
 build:
 	poetry build
 
-package-install:
-	python3 -m pip install dist/*.whl
+uninstall:
+	pip uninstall hexlet-code
 
 lint:
 	poetry run flake8 page_loader
 
-check:
-	poetry run pytest
+poet:
+	poetry install
 
-test-coverage:
-	poetry run pytest --cov=page_loader --cov-report xml
+testing:
+	pytest
