@@ -3,7 +3,7 @@ import logging
 import sys
 
 from page_loader.cli import parsing
-from page_loader.page_loader_tool import download
+from page_loader.loading import download
 
 
 logging.basicConfig(format='%(levelname)s: %(message)s',

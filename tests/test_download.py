@@ -1,12 +1,17 @@
 import pathlib
 import tempfile
+
+import pytest
+import requests.exceptions
 import requests_mock
 
 from page_loader.mkfolders import make_folder
-from page_loader.page_loader_tool import download
-from page_loader.naming import change_name, flatter_paths
+from page_loader.loading import download
+from page_loader.request_module import download_resources
+from page_loader.urls import change_name, to_file
 
 FIXTURES_PATH = f'{pathlib.Path.cwd()}/tests/fixtures'
+BAD_SITE = 'https://badsite.com'
 LINK = 'https://site.com/blog/about'
 FAKE_IMAGE = 'https://site.com/photos/me.jpg'
 FAKE_SCRIPT = 'https://site.com/assets/scripts.js'
@@ -31,7 +36,7 @@ def test_change_name():
 
 def test_normalize_string():
     expected = 'site-com-blog-about-assets-styles.css'
-    actual = flatter_paths('https://site.com/blog/about/assets/styles.css')
+    actual = to_file('https://site.com/blog/about/assets/styles.css')
     assert expected == actual
 
 
@@ -59,3 +64,20 @@ def test_download():
             expected_download_result = f'{tempdir}/site-com-blog-about.html'
             assert result == expected
             assert final == expected_download_result
+            assert 'site-com-blog-about_files/' \
+                   'site-com-blog-about-assets-styles.css' in result
+
+
+def test_download_resources():
+    image = read_from_file(IMAGE, 'rb')
+    with requests_mock.Mocker() as mock:
+        mock.get(FAKE_IMAGE, content=image)
+        img = download_resources(FAKE_IMAGE)
+        assert img == image
+
+
+def test_errors():
+    with pytest.raises(Exception) as error:
+        with tempfile.TemporaryDirectory as tmp:
+            download('https://badsite.com', tmp)
+            assert str(error.value) == requests.RequestException

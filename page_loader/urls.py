@@ -8,19 +8,19 @@ def change_name(link):
     return result
 
 
-def naming_folders(link):
+def to_dir(link):
     result = f'{change_name(link)}_files'
     return result
 
 
-def flatter_paths(path_like):
+def to_file(path_like):
     no_pref = path_like.removeprefix('/')
-    devided = os.path.splitext(no_pref)
-    stripped = change_name(devided[0])
-    if devided[1]:
-        return stripped + devided[1]
+    divided = os.path.splitext(no_pref)
+    stripped = change_name(divided[0])
+    if divided[1]:
+        return stripped + divided[1]
     else:
-        result = change_name(devided[0])
+        result = change_name(divided[0])
         return result + '.html'
 
 
@@ -29,3 +29,12 @@ def correcting_links(item_link, original_link):
     y = urlparse(original_link).netloc
     result = f'{y}{x}'
     return result
+
+
+def is_local(link, item):
+    splitted = urlparse(item)
+    parsed_link = urlparse(link)
+    if splitted.netloc == parsed_link.netloc:
+        return splitted
+    if splitted.netloc == '':
+        return splitted
